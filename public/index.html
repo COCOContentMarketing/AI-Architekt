@@ -3,36 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Maßwerk</title>
-<meta name="description" content="Maßwerk – KI-Werkzeuge nach Maß. Workshops, Konzeption und komplette Umsetzung als abgeschlossenes Projekt. Martin Bauer, COCO Consulting.">
+<title>COCO KI-Werkstatt</title>
+<meta name="description" content="COCO KI-Werkstatt: KI-Werkzeuge nach Maß. Workshops, Konzeption und komplette Umsetzung als abgeschlossenes Projekt. Martin Bauer, COCO Consulting.">
 <meta name="robots" content="noindex, nofollow, noarchive">
-<link rel="preload" href="fonts/bodoni-moda-normal-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/ibm-plex-sans-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#383338">
+<link rel="icon" type="image/png" href="img/coco-logo.png">
+<link rel="preload" href="fonts/maven-pro-normal-400-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
-/* Layout: technische Bauzeichnung. Linksbündiges, asymmetrisches Raster; Maßlinien statt Trennstriche; ein Maßwerk-Rosettenriss als einziges Bildmotiv. */
+/* Layout: COCO-Markenwelt. Dunkle Aubergine-Flächen für Einstieg und Kontakt, helle Arbeitsflächen dazwischen; Zitronengelb nur als Marker. Linksbündiges Raster, Maßkette im Ablauf. */
 :root {
-  --paper: #edf0f1;
-  --paper-2: #e2e7e9;
-  --ink: #13262e;
-  --ink-soft: #4b5e66;
-  --line: #b6c2c7;
-  --brass: #9a7430;
-  --brass-text: #7d5d22;
-  --on-ink: #edf0f1;
-  --deep: #13262e;
-  --deep-fg: #edf0f1;
+  --bg: #ffffff;
+  --bg-2: #efeff0;
+  --ink: #383338;
+  --ink-soft: #685e68;
+  --line: #dbd7db;
+  --bullet: #383338;
+  --lemon: #eaff00;
+  --on-lemon: #383338;
+  --deep: #383338;
+  --deep-fg: #f4f3f4;
+  --deep-soft: #bdb3bd;
+  --deep-line: #544c54;
 
-  --f-display: "Bodoni Moda", "Didot", "Bodoni 72", "Times New Roman", serif;
-  --f-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
-  --f-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  --f-display: "Maven Pro", "Avenir Next", "Segoe UI", Arial, sans-serif;
+  --f-body: "Maven Pro", "Avenir Next", "Segoe UI", Arial, sans-serif;
+  --f-label: "Ubuntu", "Trebuchet MS", "Segoe UI", Arial, sans-serif;
 
-  --s-xs: .78rem;
-  --s-sm: .9rem;
-  --s-md: 1.05rem;
+  --s-xs: .76rem;
+  --s-sm: .92rem;
+  --s-md: 1.06rem;
   --s-lg: 1.3rem;
-  --s-xl: clamp(1.7rem, 1.2rem + 1.8vw, 2.4rem);
-  --s-2xl: clamp(2.3rem, 1.4rem + 3.6vw, 4.1rem);
+  --s-xl: clamp(1.7rem, 1.2rem + 1.8vw, 2.5rem);
+  --s-2xl: clamp(2.3rem, 1.3rem + 3.8vw, 4.2rem);
 
   --wrap: 72rem;
   --gutter: clamp(1rem, .5rem + 2.5vw, 2.5rem);
@@ -40,30 +43,26 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #0e181c;
-    --paper-2: #15232a;
-    --ink: #e3e9eb;
-    --ink-soft: #9fb1b8;
-    --line: #2d4049;
-    --brass: #cfa95e;
-    --brass-text: #d6b36c;
-    --on-ink: #0e181c;
-    --deep: #1a2d35;
-    --deep-fg: #e3e9eb;
+    --bg: #1d1a1d;
+    --bg-2: #272327;
+    --ink: #efeff0;
+    --ink-soft: #b5abb5;
+    --line: #3e383e;
+    --bullet: #eaff00;
+    --deep: #383338;
+    --deep-line: #5a525a;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --paper: #0e181c;
-  --paper-2: #15232a;
-  --ink: #e3e9eb;
-  --ink-soft: #9fb1b8;
-  --line: #2d4049;
-  --brass: #cfa95e;
-  --brass-text: #d6b36c;
-  --on-ink: #0e181c;
-  --deep: #1a2d35;
-  --deep-fg: #e3e9eb;
+  --bg: #1d1a1d;
+  --bg-2: #272327;
+  --ink: #efeff0;
+  --ink-soft: #b5abb5;
+  --line: #3e383e;
+  --bullet: #eaff00;
+  --deep: #383338;
+  --deep-line: #5a525a;
   color-scheme: dark;
 }
 
@@ -72,115 +71,120 @@ html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   margin: 0;
-  background: var(--paper);
+  background: var(--bg);
   color: var(--ink);
   font-family: var(--f-body);
   font-size: var(--s-md);
-  line-height: 1.6;
+  line-height: 1.62;
   -webkit-font-smoothing: antialiased;
 }
-img { max-width: 100%; }
+img { max-width: 100%; display: block; }
 a { color: inherit; }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; border-radius: 2px; }
-::selection { background: var(--brass); color: var(--on-ink); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--lemon); outline-offset: 3px; }
+::selection { background: var(--lemon); color: var(--on-lemon); }
 
 .wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gutter); }
 
-h1, h2, h3 { font-family: var(--f-display); font-weight: 500; line-height: 1.08; margin: 0; text-wrap: balance; letter-spacing: -.01em; }
-.fact b, .phase .num, .mark b, .one-hand, blockquote p, .channel a { }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 700; line-height: 1.1; margin: 0; text-wrap: balance; letter-spacing: -.015em; }
 h2 { font-size: var(--s-xl); }
-h3 { font-size: var(--s-lg); }
+h3 { font-size: var(--s-lg); font-weight: 600; }
 p { margin: 0; }
 .label {
-  font-family: var(--f-mono);
+  display: inline-block;
+  justify-self: start;
+  align-self: start;
+  font-family: var(--f-label);
   font-size: var(--s-xs);
   font-weight: 500;
-  letter-spacing: .09em;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--brass-text);
+  line-height: 1.3;
+  padding: .28rem .55rem .24rem;
+  background: var(--lemon);
+  color: var(--on-lemon);
 }
+.label.plain { background: none; padding: 0; color: var(--ink-soft); }
 .muted { color: var(--ink-soft); }
+.mark {
+  background: var(--lemon);
+  color: var(--on-lemon);
+  padding: 0 .12em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+ul.dots { margin: 0; padding: 0; list-style: none; display: grid; gap: .4rem; font-size: var(--s-sm); }
+ul.dots li { padding-left: 1.05rem; position: relative; }
+ul.dots li::before { content: ""; position: absolute; left: 0; top: .62em; width: .4rem; height: .4rem; background: var(--bullet); }
 
 /* ---------- Kopfzeile ---------- */
 .bar {
   position: sticky;
   top: env(safe-area-inset-top, 0px);
   z-index: 10;
-  background: color-mix(in srgb, var(--paper) 88%, transparent);
-  backdrop-filter: saturate(1.2) blur(8px);
-  -webkit-backdrop-filter: saturate(1.2) blur(8px);
-  border-bottom: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+  background: var(--deep);
+  color: var(--deep-fg);
+  border-bottom: 1px solid var(--deep-line);
 }
-.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .8rem; }
-.mark { display: flex; align-items: baseline; gap: .7rem; text-decoration: none; min-width: 0; }
-.mark b { font-family: var(--f-display); font-weight: 600; font-size: 1.35rem; letter-spacing: .14em; }
-.mark span { font-family: var(--f-mono); font-size: var(--s-xs); color: var(--ink-soft); white-space: nowrap; }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .55rem; }
+.brand { display: flex; align-items: center; gap: .9rem; text-decoration: none; min-width: 0; }
+.brand img { height: 44px; width: auto; margin-block: -6px; }
+.brand span { font-family: var(--f-label); font-weight: 500; font-size: .95rem; letter-spacing: .04em; white-space: nowrap; padding-left: .9rem; border-left: 1px solid var(--deep-line); }
 .nav { display: flex; gap: 1.6rem; align-items: center; font-size: var(--s-sm); }
-.nav a { text-decoration: none; color: var(--ink-soft); }
-.nav a:hover { color: var(--ink); }
-.nav a.cta-sm { color: var(--ink); border: 1px solid var(--ink); padding: .35rem .8rem; }
-.nav a.cta-sm:hover { background: var(--ink); color: var(--paper); }
-@media (max-width: 52rem) { .nav a:not(.cta-sm) { display: none; } .mark span { display: none; } }
+.nav a { text-decoration: none; color: var(--deep-soft); }
+.nav a:hover { color: var(--deep-fg); }
+.nav a.cta-sm { color: var(--on-lemon); background: var(--lemon); font-weight: 600; padding: .45rem .9rem; }
+.nav a.cta-sm:hover { color: var(--on-lemon); background: var(--deep-fg); }
+@media (max-width: 56rem) { .nav a:not(.cta-sm) { display: none; } }
+@media (max-width: 30rem) { .nav .long { display: none; } .brand { gap: .7rem; } .brand span { padding-left: .7rem; font-size: .88rem; } }
+@media (max-width: 20rem) { .brand span { display: none; } }
 
-/* ---------- Hero ---------- */
-.hero { padding-block: clamp(2.5rem, 2rem + 4vw, 5.5rem) clamp(2rem, 1.5rem + 3vw, 4rem); }
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(1.5rem, 1rem + 3vw, 4rem); align-items: center; }
+/* ---------- Einstieg ---------- */
+.hero { background: var(--deep); color: var(--deep-fg); padding-block: clamp(3rem, 2rem + 5vw, 6.5rem) clamp(3rem, 2rem + 4vw, 5.5rem); }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: clamp(2rem, 1rem + 4vw, 5rem); align-items: end; }
 .hero-text { display: grid; gap: 1.6rem; min-width: 0; }
-.hero h1 { font-size: var(--s-2xl); font-weight: 500; }
-.hero h1 em { font-style: italic; font-weight: 400; color: var(--brass-text); }
-.lead { font-size: clamp(1.05rem, 1rem + .3vw, 1.2rem); max-width: 36rem; color: var(--ink-soft); }
-.lead strong { color: var(--ink); font-weight: 500; }
+.hero h1 { font-size: var(--s-2xl); font-weight: 700; line-height: 1.06; }
+.hero h1 .thin { font-weight: 400; color: var(--deep-soft); }
+.lead { font-size: clamp(1.05rem, 1rem + .3vw, 1.22rem); max-width: 36rem; color: var(--deep-soft); }
+.lead strong { color: var(--deep-fg); font-weight: 600; }
 .actions { display: flex; flex-wrap: wrap; gap: .8rem; }
 .btn {
   display: inline-flex; align-items: center; gap: .6rem;
-  font: 500 var(--s-sm)/1 var(--f-body);
-  padding: .95rem 1.35rem;
+  font: 600 var(--s-sm)/1 var(--f-body);
+  padding: 1rem 1.4rem;
   text-decoration: none;
-  border: 1px solid var(--ink);
-  transition: background-color .2s, color .2s;
+  border: 1px solid transparent;
+  transition: background-color .2s, color .2s, border-color .2s;
 }
-.btn-primary { background: var(--ink); color: var(--paper); }
-.btn-primary:hover { background: transparent; color: var(--ink); }
-.btn-ghost:hover { background: var(--ink); color: var(--paper); }
-.figure { position: relative; min-width: 0; }
-.figure canvas { display: block; width: 100%; aspect-ratio: 1 / 1; max-width: 100%; }
-.figure figcaption { font-family: var(--f-mono); font-size: var(--s-xs); color: var(--ink-soft); margin-top: .4rem; }
-@media (max-width: 52rem) {
-  .hero .wrap { grid-template-columns: minmax(0, 1fr); }
-  .figure { max-width: 22rem; justify-self: center; width: 100%; }
-}
+.btn-primary { background: var(--lemon); color: var(--on-lemon); }
+.btn-primary:hover { background: var(--deep-fg); }
+.btn-ghost { border-color: var(--deep-soft); color: var(--deep-fg); }
+.btn-ghost:hover { border-color: var(--lemon); color: var(--lemon); }
+.btn svg { width: 1rem; height: 1rem; stroke: currentColor; fill: none; stroke-width: 2; }
 
-/* Kennzahlen als Maßangaben */
-.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; margin-top: clamp(2rem, 1.5rem + 2vw, 3.5rem); }
-.fact { display: grid; gap: .35rem; min-width: 0; }
-.fact .dim { height: 9px; border-left: 1px solid var(--ink-soft); border-right: 1px solid var(--ink-soft); position: relative; }
-.fact .dim::after { content: ""; position: absolute; left: 0; right: 0; top: 4px; border-top: 1px solid var(--ink-soft); }
-.fact b { font-family: var(--f-display); font-weight: 500; font-size: clamp(1.8rem, 1.4rem + 1.4vw, 2.6rem); line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
-.fact b .plus { font-family: var(--f-body); font-weight: 400; font-size: .7em; margin-left: .05em; vertical-align: .25em; color: inherit; }
-.hero h1 .hy { font-family: var(--f-body); font-weight: 400; font-size: .8em; }
-.fact > span { font-size: var(--s-sm); color: var(--ink-soft); }
-@media (max-width: 40rem) { .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.facts { display: grid; gap: 0; min-width: 0; }
+.fact { display: grid; grid-template-columns: 7.2rem minmax(0, 1fr); gap: 1rem; align-items: baseline; padding-block: .95rem; border-top: 1px solid var(--deep-line); }
+.fact:last-child { border-bottom: 1px solid var(--deep-line); }
+.fact b { font-family: var(--f-display); font-weight: 700; font-size: clamp(2rem, 1.6rem + 1.2vw, 2.7rem); line-height: 1; color: var(--lemon); font-variant-numeric: lining-nums tabular-nums; }
+.fact span { font-size: var(--s-sm); color: var(--deep-soft); }
+@media (max-width: 56rem) { .hero .wrap { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---------- Sektionen ---------- */
-section, #top { scroll-margin-top: 4.5rem; }
-section { padding-block: clamp(3rem, 2.2rem + 4vw, 6rem); }
+section { padding-block: clamp(3.2rem, 2.2rem + 4vw, 6rem); scroll-margin-top: 4rem; }
+.tint { background: var(--bg-2); }
 .sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 1rem clamp(1.5rem, 1rem + 3vw, 4rem); margin-bottom: clamp(2rem, 1.5rem + 2vw, 3.5rem); }
-.sec-head .label { padding-top: .6rem; }
+.sec-head .label { margin-top: .5rem; }
 .sec-head > div { display: grid; gap: 1rem; max-width: 42rem; }
-@media (max-width: 52rem) { .sec-head { grid-template-columns: minmax(0, 1fr); } .sec-head .label { padding-top: 0; } }
-.tint { background: var(--paper-2); }
+@media (max-width: 56rem) { .sec-head { grid-template-columns: minmax(0, 1fr); } .sec-head .label { margin-top: 0; } }
 
 /* Drei Disziplinen */
-.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 1rem + 2vw, 3rem); }
-.trio article { display: grid; gap: .8rem; align-content: start; min-width: 0; padding-top: 1.2rem; border-top: 1px solid var(--ink); }
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, .8rem + 1.5vw, 2rem); }
+.trio article { display: grid; gap: .8rem; align-content: start; min-width: 0; padding: clamp(1.3rem, 1rem + 1vw, 1.8rem); background: var(--bg); }
+.trio .no { font-family: var(--f-label); font-weight: 700; font-size: var(--s-xs); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
 .trio p { color: var(--ink-soft); font-size: var(--s-sm); line-height: 1.65; }
-.trio ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .35rem; font-size: var(--s-sm); }
-.trio li { padding-left: 1rem; position: relative; }
-.trio li::before { content: ""; position: absolute; left: 0; top: .72em; width: .45rem; border-top: 1px solid var(--brass); }
-.one-hand { margin-top: clamp(2rem, 1.5rem + 2vw, 3rem); font-family: var(--f-display); font-size: var(--s-lg); font-style: italic; max-width: 44rem; line-height: 1.35; }
-@media (max-width: 52rem) { .trio { grid-template-columns: minmax(0, 1fr); } }
+.one-hand { margin-top: clamp(2rem, 1.5rem + 2vw, 3rem); font-size: var(--s-lg); font-weight: 500; max-width: 46rem; line-height: 1.45; }
+@media (max-width: 56rem) { .trio { grid-template-columns: minmax(0, 1fr); } }
 
-/* Werkverzeichnis */
+/* Referenzwerkzeuge */
 .works { display: grid; }
 .work {
   display: grid;
@@ -190,120 +194,113 @@ section { padding-block: clamp(3rem, 2.2rem + 4vw, 6rem); }
   border-top: 1px solid var(--line);
 }
 .work:last-child { border-bottom: 1px solid var(--line); }
-.work-id { display: grid; gap: .5rem; align-content: start; min-width: 0; }
-.work-id h3 { font-size: clamp(1.6rem, 1.3rem + 1vw, 2.1rem); }
+.work-id { display: grid; gap: .55rem; align-content: start; min-width: 0; }
+.work-id h3 { font-size: clamp(1.6rem, 1.3rem + 1vw, 2.1rem); font-weight: 700; }
 .work-id .for { font-size: var(--s-sm); color: var(--ink-soft); }
 .work-body { display: grid; gap: 1.1rem; min-width: 0; }
-.work-body > p:first-child { font-size: var(--s-md); }
-.work-body ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem 1.5rem; font-size: var(--s-sm); color: var(--ink-soft); }
-.work-body li { padding-left: 1rem; position: relative; }
-.work-body li::before { content: ""; position: absolute; left: 0; top: .72em; width: .45rem; border-top: 1px solid var(--brass); }
-.decision { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .9rem; align-items: start; padding: 1rem 1.1rem; background: var(--paper-2); font-size: var(--s-sm); }
-.tint .decision { background: var(--paper); }
-.decision .label { white-space: nowrap; padding-top: .15rem; }
+.work-body ul.dots { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem 1.5rem; color: var(--ink-soft); }
+.decision { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .9rem; align-items: start; padding: 1rem 1.1rem; background: var(--bg-2); font-size: var(--s-sm); }
+.decision b { font-family: var(--f-label); font-weight: 700; font-size: var(--s-xs); letter-spacing: .1em; text-transform: uppercase; padding-top: .2rem; white-space: nowrap; }
 .stack { display: flex; flex-wrap: wrap; gap: .4rem; }
-.stack span { font-family: var(--f-mono); font-size: .74rem; padding: .2rem .5rem; border: 1px solid var(--line); color: var(--ink-soft); }
-@media (max-width: 52rem) {
+.stack span { font-family: var(--f-label); font-size: .76rem; padding: .22rem .55rem; border: 1px solid var(--line); color: var(--ink-soft); }
+@media (max-width: 56rem) {
   .work { grid-template-columns: minmax(0, 1fr); }
-  .work-body ul { grid-template-columns: minmax(0, 1fr); }
-  .decision { grid-template-columns: minmax(0, 1fr); gap: .4rem; }
+  .work-body ul.dots { grid-template-columns: minmax(0, 1fr); }
+  .decision { grid-template-columns: minmax(0, 1fr); gap: .35rem; }
 }
 
 /* Werkzeugkasten */
-.tools { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1.2rem, 1rem + 1.5vw, 2.5rem); }
-.tools div { display: grid; gap: .7rem; align-content: start; min-width: 0; }
-.tools h3 { font-size: 1.15rem; }
-.tools dl { margin: 0; display: grid; gap: .55rem; }
-.tools dt { font-weight: 500; font-size: var(--s-sm); }
-.tools dd { margin: 0; font-size: .84rem; color: var(--ink-soft); line-height: 1.5; }
+.tools { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, .8rem + 1.5vw, 2rem); }
+.tools > div { display: grid; gap: .9rem; align-content: start; min-width: 0; padding: 1.3rem; background: var(--bg); }
+.tools dl { margin: 0; display: grid; gap: .6rem; }
+.tools dt { font-weight: 600; font-size: var(--s-sm); }
+.tools dd { margin: 0; font-size: .86rem; color: var(--ink-soft); line-height: 1.5; }
 .tools-note { margin-top: clamp(2rem, 1.5rem + 2vw, 3rem); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 1rem clamp(1.5rem, 1rem + 3vw, 4rem); }
-.tools-note p { max-width: 42rem; }
-@media (max-width: 60rem) { .tools { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.tools-note p { max-width: 44rem; font-size: var(--s-lg); line-height: 1.5; font-weight: 500; }
+@media (max-width: 62rem) { .tools { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 40rem) { .tools { grid-template-columns: minmax(0, 1fr); } }
-@media (max-width: 52rem) { .tools-note { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 56rem) { .tools-note { grid-template-columns: minmax(0, 1fr); } }
 
 /* Ablauf mit Maßkette */
 .chain { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: 2rem; }
 .chain > div { position: relative; height: 2.4rem; border-left: 1px solid var(--ink); }
 .chain > div:last-child { border-right: 1px solid var(--ink); }
 .chain > div::before { content: ""; position: absolute; left: 0; right: 0; bottom: .55rem; border-top: 1px solid var(--ink); }
-.chain > div::after { content: ""; position: absolute; left: -4px; bottom: calc(.55rem - 4px); width: 8px; height: 8px; border-top: 1px solid var(--ink); transform: rotate(-45deg); transform-origin: center; }
+.chain > div::after { content: ""; position: absolute; left: -4px; bottom: calc(.55rem - 4px); width: 8px; height: 8px; border-top: 1px solid var(--ink); transform: rotate(-45deg); }
 .chain > div:last-child span::after { content: ""; position: absolute; right: -4px; bottom: calc(.55rem - 4px); width: 8px; height: 8px; border-top: 1px solid var(--ink); transform: rotate(-45deg); }
-.chain span { position: absolute; left: 0; right: 0; top: 0; text-align: center; font-family: var(--f-mono); font-size: var(--s-xs); color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-inline: .5rem; }
+.chain span { position: absolute; left: 0; right: 0; top: 0; text-align: center; font-family: var(--f-label); font-size: var(--s-xs); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-inline: .5rem; }
 .phases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.2rem, 1rem + 1.5vw, 2.5rem); }
 .phase { display: grid; gap: .9rem; align-content: start; min-width: 0; }
-.phase .num { font-family: var(--f-display); font-style: italic; font-size: 2.4rem; line-height: 1; color: var(--brass-text); }
+.phase .num { display: inline-grid; place-items: center; width: 2.6rem; height: 2.6rem; background: var(--lemon); color: var(--on-lemon); font-weight: 700; font-size: 1.3rem; }
 .phase p { font-size: var(--s-sm); color: var(--ink-soft); }
-.phase ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .35rem; font-size: var(--s-sm); }
-.phase li { padding-left: 1rem; position: relative; }
-.phase li::before { content: ""; position: absolute; left: 0; top: .72em; width: .45rem; border-top: 1px solid var(--brass); }
-.result { margin-top: .3rem; padding-top: .8rem; border-top: 1px dashed var(--line); font-size: var(--s-sm); }
-.result b { font-weight: 600; }
-@media (max-width: 52rem) {
+.result { margin-top: .3rem; padding-top: .8rem; border-top: 1px solid var(--line); font-size: var(--s-sm); color: var(--ink) !important; }
+.result b { font-weight: 700; }
+@media (max-width: 56rem) {
   .chain { display: none; }
   .phases { grid-template-columns: minmax(0, 1fr); }
-  .phase { padding-left: 1rem; border-left: 1px solid var(--ink); }
 }
 
 /* Projekt statt Abo */
-.terms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(1.5rem, 1rem + 3vw, 4rem); }
-.term { display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); gap: .3rem 1rem; padding-block: 1.3rem; border-top: 1px solid var(--line); }
-.term svg { width: 1.6rem; height: 1.6rem; stroke: var(--brass); fill: none; stroke-width: 1.2; margin-top: .15rem; }
-.term h3 { font-family: var(--f-body); font-weight: 600; font-size: var(--s-md); line-height: 1.35; grid-column: 2; }
-.term p { grid-column: 2; font-size: var(--s-sm); color: var(--ink-soft); }
-@media (max-width: 52rem) { .terms { grid-template-columns: minmax(0, 1fr); } }
+.terms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, .8rem + 1.5vw, 2rem); }
+.term { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); gap: .35rem 1rem; padding: 1.4rem; background: var(--bg); }
+.term svg { width: 1.8rem; height: 1.8rem; stroke: var(--ink); fill: none; stroke-width: 1.5; grid-row: span 2; }
+.term h3 { font-size: var(--s-md); font-weight: 700; line-height: 1.35; }
+.term p { font-size: var(--s-sm); color: var(--ink-soft); }
+@media (max-width: 56rem) { .terms { grid-template-columns: minmax(0, 1fr); } }
 
 /* Person */
-.person { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 1.5rem clamp(1.5rem, 1rem + 3vw, 4rem); }
-.person-side { display: grid; gap: 1rem; align-content: start; min-width: 0; }
-.person-side h2 { font-size: var(--s-xl); }
-.person-main { display: grid; gap: 1.5rem; min-width: 0; }
-.person-main > p { max-width: 42rem; }
-.startups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.5rem; }
-.startups div { display: grid; gap: .15rem; padding-left: .9rem; border-left: 1px solid var(--brass); min-width: 0; }
-.startups b { font-weight: 600; font-size: var(--s-sm); }
-.startups span { font-size: .84rem; color: var(--ink-soft); }
+.person { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 2rem clamp(1.5rem, 1rem + 3vw, 4rem); }
+.person-side { display: grid; gap: 1.1rem; align-content: start; min-width: 0; }
+.portrait { position: relative; margin: 0 .9rem .9rem 0; max-width: 22rem; }
+.portrait::before { content: ""; position: absolute; inset: .9rem -.9rem -.9rem .9rem; background: var(--lemon); }
+.portrait img { position: relative; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; filter: grayscale(1); }
+.person-side h2 { font-size: var(--s-xl); margin-top: .6rem; }
+.person-main { display: grid; gap: 1.5rem; min-width: 0; align-content: start; }
+.person-main > p { max-width: 44rem; }
+.startups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.startups div { display: grid; gap: .2rem; padding: 1rem 1.1rem; background: var(--bg-2); min-width: 0; }
+.startups b { font-weight: 700; font-size: var(--s-sm); }
+.startups span { font-size: .86rem; color: var(--ink-soft); }
 .clients { font-size: var(--s-sm); color: var(--ink-soft); line-height: 1.8; }
-.clients b { color: var(--ink); font-weight: 500; }
-blockquote { margin: 0; padding: 1.4rem 0 0; border-top: 1px solid var(--line); display: grid; gap: .8rem; max-width: 42rem; }
-blockquote p { font-family: var(--f-display); font-style: italic; font-size: 1.2rem; line-height: 1.45; }
-blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
-@media (max-width: 52rem) { .person { grid-template-columns: minmax(0, 1fr); } }
-@media (max-width: 40rem) { .startups { grid-template-columns: minmax(0, 1fr); } }
+.clients b { color: var(--ink); font-weight: 600; }
+.quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+blockquote { margin: 0; padding-top: 1.2rem; border-top: 3px solid var(--bullet); display: grid; gap: .8rem; align-content: start; }
+blockquote p { font-size: 1.08rem; line-height: 1.5; font-weight: 500; }
+blockquote footer { font-size: .84rem; color: var(--ink-soft); }
+@media (max-width: 56rem) { .person { grid-template-columns: minmax(0, 1fr); } .portrait { max-width: 18rem; } }
+@media (max-width: 40rem) { .startups, .quotes { grid-template-columns: minmax(0, 1fr); } }
 
 /* Kontakt */
 .contact { background: var(--deep); color: var(--deep-fg); }
-.contact .label { color: #cfa95e; }
 .contact .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2rem clamp(1.5rem, 1rem + 3vw, 4rem); align-items: end; }
-.contact h2 { font-size: var(--s-2xl); font-weight: 500; }
+.contact h2 { font-size: var(--s-2xl); }
 .contact-text { display: grid; gap: 1.2rem; min-width: 0; }
-.contact-text p { opacity: .8; max-width: 34rem; }
+.contact-text p { color: var(--deep-soft); max-width: 34rem; }
 .channels { display: grid; gap: 1rem; min-width: 0; }
-.channel { display: grid; gap: .3rem; padding-bottom: 1rem; border-bottom: 1px solid color-mix(in srgb, var(--deep-fg) 25%, transparent); }
+.channel { display: grid; gap: .5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--deep-line); }
 .channel .row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-.channel a { font-family: var(--f-display); font-size: clamp(1.25rem, 1.1rem + .6vw, 1.6rem); text-decoration: none; overflow-wrap: anywhere; }
-.channel a:hover { color: #cfa95e; }
-.copy { font: 500 var(--s-xs)/1 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; background: transparent; color: var(--deep-fg); border: 1px solid color-mix(in srgb, var(--deep-fg) 40%, transparent); padding: .45rem .7rem; cursor: pointer; }
-.copy:hover { border-color: #cfa95e; color: #cfa95e; }
-.contact .fine { font-family: var(--f-mono); font-size: var(--s-xs); opacity: .65; }
-@media (max-width: 52rem) { .contact .wrap { grid-template-columns: minmax(0, 1fr); } }
+.channel a { font-weight: 600; font-size: clamp(1.2rem, 1.05rem + .6vw, 1.55rem); text-decoration: none; overflow-wrap: anywhere; }
+.channel a:hover { color: var(--lemon); }
+.copy { font: 500 var(--s-xs)/1 var(--f-label); letter-spacing: .08em; text-transform: uppercase; background: transparent; color: var(--deep-fg); border: 1px solid var(--deep-line); padding: .5rem .75rem; cursor: pointer; }
+.copy:hover { border-color: var(--lemon); color: var(--lemon); }
+.contact .fine { font-size: var(--s-xs); font-family: var(--f-label); letter-spacing: .04em; color: var(--deep-soft); }
+@media (max-width: 56rem) { .contact .wrap { grid-template-columns: minmax(0, 1fr); } }
 
 .foot { padding-block: 1.6rem; font-size: .8rem; color: var(--ink-soft); }
 .foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem 1.5rem; }
-.foot nav { display: flex; gap: 1.2rem; }
 </style>
 </head>
 <body>
 
 <header class="bar">
   <div class="wrap">
-    <a class="mark" href="#top" aria-label="Maßwerk, zum Seitenanfang"><b>MASSWERK</b><span>KI-Werkzeuge nach Maß</span></a>
+    <a class="brand" href="#top" aria-label="COCO KI-Werkstatt, zum Seitenanfang"><img src="img/coco-logo.png" alt="COCO" width="110" height="44"><span>KI-Werkstatt</span></a>
     <nav class="nav" aria-label="Seitennavigation">
       <a href="#ansatz">Ansatz</a>
       <a href="#werke">Referenzwerkzeuge</a>
       <a href="#angebot">Angebot</a>
       <a href="#person">Über mich</a>
-      <a class="cta-sm" href="#kontakt">Gespräch vereinbaren</a>
+      <a class="cta-sm" href="#kontakt">Gespräch<span class="long"> vereinbaren</span></a>
     </nav>
   </div>
 </header>
@@ -313,25 +310,19 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
   <div class="hero">
     <div class="wrap">
       <div class="hero-text">
-        <p class="label">Workshop · Konzeption · Umsetzung · Übergabe</p>
-        <h1>KI<span class="hy">-</span>Werkzeuge, <em>nach Maß</em> gebaut für Ihr Unternehmen.</h1>
+        <span class="label">Workshop · Konzeption · Umsetzung · Übergabe</span>
+        <h1>KI-Werkzeuge <span class="mark">nach Maß</span>. <span class="thin">Konzipiert, gebaut und übergeben.</span></h1>
         <p class="lead">Ich entwickle KI-Anwendungen für Unternehmen: von der Projektdefinition im Workshop bis zum fertigen, übergebenen Tool. <strong>Immer als abgeschlossenes Projekt mit festem Umfang.</strong> Quellcode, Daten und Konten gehören danach Ihnen.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#kontakt">Gespräch vereinbaren</a>
           <a class="btn btn-ghost" href="#werke">Gebaute Werkzeuge ansehen</a>
         </div>
       </div>
-      <figure class="figure" aria-hidden="true">
-        <canvas id="rosette"></canvas>
-        <figcaption>Maßwerk: Formen, die aus Zirkel und Lineal konstruiert werden.</figcaption>
-      </figure>
-    </div>
-    <div class="wrap">
       <div class="facts">
-        <div class="fact"><div class="dim"></div><b>30</b><span>Jahre digitale Projekte</span></div>
-        <div class="fact"><div class="dim"></div><b>800<span class="plus">+</span></b><span>umgesetzte Projekte</span></div>
-        <div class="fact"><div class="dim"></div><b>300<span class="plus">+</span></b><span>Unternehmen, vom Startup bis zum Konzern</span></div>
-        <div class="fact"><div class="dim"></div><b>4</b><span>eigene Startups gegründet, zwei davon verkauft</span></div>
+        <div class="fact"><b>30</b><span>Jahre digitale Projekte</span></div>
+        <div class="fact"><b>800+</b><span>umgesetzte Projekte</span></div>
+        <div class="fact"><b>300+</b><span>Unternehmen, vom Startup bis zum Konzern</span></div>
+        <div class="fact"><b>4</b><span>eigene Startups gegründet, zwei davon verkauft</span></div>
       </div>
     </div>
   </div>
@@ -339,7 +330,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
   <section id="ansatz" class="tint">
     <div class="wrap">
       <div class="sec-head">
-        <p class="label">Der Ansatz</p>
+        <span class="label">Der Ansatz</span>
         <div>
           <h2>Ein Sprachmodell ist an einem Nachmittag angebunden. Ein Werkzeug, mit dem ein Team jeden Tag arbeitet, braucht mehr.</h2>
           <p class="muted">Die meisten KI-Vorhaben scheitern selten am Modell. Sie scheitern an unklaren Zielen, an Prozessen, die niemand aufgenommen hat, an Oberflächen, die im Alltag niemand öffnet, und an fehlenden Schnittstellen. Damit ein Tool im Unternehmen trägt, müssen drei Disziplinen zusammenpassen.</p>
@@ -347,44 +338,44 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
       </div>
       <div class="trio">
         <article>
-          <p class="label">Konzeption</p>
+          <span class="no">Konzeption</span>
           <h3>Das Richtige bauen</h3>
           <p>Welcher Prozess wird besser, für wen, und woran merkt man das? Was gehört in Version 1, was bewusst noch nicht?</p>
-          <ul>
+          <ul class="dots">
             <li>Ziele, Nutzen und Grenzen</li>
             <li>Rollen, Rechte und Sichtbarkeiten</li>
             <li>Datenschutz und Wahl des Modells</li>
           </ul>
         </article>
         <article>
-          <p class="label">Technik</p>
+          <span class="no">Technik</span>
           <h3>Solide und bezahlbar im Betrieb</h3>
           <p>Ein sauberes Datenmodell, abgesicherte Zugriffe und Schnittstellen zu den Systemen, die bereits da sind. Dazu KI-Kosten, die kalkulierbar bleiben.</p>
-          <ul>
+          <ul class="dots">
             <li>Datenbank, Authentifizierung, Rechte</li>
             <li>E-Mail, Payment, Google, Webhooks</li>
             <li>Kosten pro Lauf von Anfang an geplant</li>
           </ul>
         </article>
         <article>
-          <p class="label">UX</p>
+          <span class="no">UX</span>
           <h3>Gern genutzt, ohne Schulung</h3>
           <p>Wer öffnet das Tool, wann und auf welchem Gerät? Gute Oberflächen zeigen jeder Rolle genau das, was sie braucht, und sonst nichts.</p>
-          <ul>
+          <ul class="dots">
             <li>Informationsarchitektur und Klickpfade</li>
             <li>Ruhige Oberflächen für Desktop und Smartphone</li>
             <li>Sprache, die Nutzer verstehen</li>
           </ul>
         </article>
       </div>
-      <p class="one-hand">Alle drei Disziplinen liegen bei mir in einer Hand. Das spart Übergaben, Abstimmungsschleifen und die teuren Missverständnisse zwischen Fachbereich, Agentur und Entwicklung.</p>
+      <p class="one-hand">Alle drei Disziplinen liegen bei mir <span class="mark">in einer Hand</span>. Das spart Übergaben, Abstimmungsschleifen und die teuren Missverständnisse zwischen Fachbereich, Agentur und Entwicklung.</p>
     </div>
   </section>
 
   <section id="werke">
     <div class="wrap">
       <div class="sec-head">
-        <p class="label">Referenzwerkzeuge</p>
+        <span class="label">Referenzwerkzeuge</span>
         <div>
           <h2>Gebaut, im Einsatz und jeden Tag genutzt.</h2>
           <p class="muted">Fünf Werkzeuge, die ich konzipiert, gestaltet und vollständig umgesetzt habe. Jedes löst eine andere Art von Aufgabe, und bei jedem hat eine Konzeptionsentscheidung den Unterschied gemacht.</p>
@@ -395,13 +386,13 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
 
         <article class="work">
           <div class="work-id">
-            <p class="label">Öffentliche App · DE / EN</p>
+            <span class="label plain">Öffentliche App · DE / EN</span>
             <h3>Solantara</h3>
             <p class="for">KI-Coach für den Umgang mit Angst</p>
           </div>
           <div class="work-body">
             <p>Ein persönlicher Coach, der sich an frühere Gespräche erinnert und mit bewährten psychologischen Methoden arbeitet. Für Menschen, die private, jederzeit verfügbare Unterstützung suchen.</p>
-            <ul>
+            <ul class="dots">
               <li>Coach mit Gedächtnis über die eigene Geschichte</li>
               <li>Angsttagebuch zur Mustererkennung</li>
               <li>Gedankenwerkzeug nach kognitiver Umstrukturierung</li>
@@ -409,20 +400,20 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
               <li>Abo-Modell mit Checkout, Kündigung und Gutscheincodes</li>
               <li>Fortschrittsverlauf und Bot-Schutz</li>
             </ul>
-            <div class="decision"><span class="label">Entscheidung</span><p>Gesundheitsdaten verlangen europäisches Hosting. Deshalb läuft der Coach auf Mistral AI, alle Daten bleiben in der EU und fließen nicht ins Modelltraining.</p></div>
+            <div class="decision"><b>Entscheidung</b><p>Gesundheitsdaten verlangen europäisches Hosting. Deshalb läuft der Coach auf Mistral AI, alle Daten bleiben in der EU und fließen nicht ins Modelltraining.</p></div>
             <div class="stack"><span>Mistral AI</span><span>Claude</span><span>Stripe</span><span>Supabase</span><span>Next.js</span><span>Vercel</span></div>
           </div>
         </article>
 
         <article class="work">
           <div class="work-id">
-            <p class="label">Kundenportal · 4 Rollen</p>
+            <span class="label plain">Kundenportal · 4 Rollen</span>
             <h3>Projektcockpit</h3>
             <p class="for">Digitaler Projektraum für hochwertigen Innenausbau</p>
           </div>
           <div class="work-body">
             <p>Ein gemeinsamer Raum für Bauherr, Interior Designer, Handwerker und Bauleitung. Jede Rolle sieht ihren Ausschnitt desselben Projekts: der Bauherr eine ruhige Übersicht, der Handwerker seine Aufgaben, die Bauleitung alles.</p>
-            <ul>
+            <ul class="dots">
               <li>Aufgaben, Klärungspunkte und offene Entscheidungen</li>
               <li>Baustellenfotos mit Historie, Dokumente</li>
               <li>Bauzeitenplan mit 4-Wochen-Ausblick</li>
@@ -430,20 +421,20 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
               <li>E-Mail- und Push-Benachrichtigungen</li>
               <li>Nutzer- und Rechteverwaltung pro Projekt</li>
             </ul>
-            <div class="decision"><span class="label">Entscheidung</span><p>Sichtbarkeit wird in der Datenbank selbst abgesichert, für jede Tabelle einzeln. So kann auch ein Fehler in der Oberfläche einem Bauherrn keine fremden Daten zeigen.</p></div>
+            <div class="decision"><b>Entscheidung</b><p>Sichtbarkeit wird in der Datenbank selbst abgesichert, für jede Tabelle einzeln. So kann auch ein Fehler in der Oberfläche einem Bauherrn keine fremden Daten zeigen.</p></div>
             <div class="stack"><span>Claude API</span><span>Supabase RLS</span><span>Resend</span><span>Web Push</span><span>Next.js</span><span>Vercel</span></div>
           </div>
         </article>
 
         <article class="work">
           <div class="work-id">
-            <p class="label">Vertrieb · B2B</p>
+            <span class="label plain">Vertrieb · B2B</span>
             <h3>CRM</h3>
             <p class="for">Kontaktpflege mit KI-Entwürfen direkt in Gmail</p>
           </div>
           <div class="work-body">
             <p>Ein schlankes Vertriebs-CRM, das sagt, wen man heute kontaktieren sollte, und die passende E-Mail gleich vorbereitet.</p>
-            <ul>
+            <ul class="dots">
               <li>Unternehmen, Ansprechpartner und Verlauf als Timeline</li>
               <li>Claude entwirft E-Mails auf Basis eigener Vorlagen</li>
               <li>Entwurf landet direkt im Gmail-Postfach</li>
@@ -451,20 +442,20 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
               <li>Feste Kontaktzyklen: Follow-up nach 8 und 14 Tagen, Wiederaufnahme nach 90</li>
               <li>Tägliche Übersicht um 8 Uhr per Mail</li>
             </ul>
-            <div class="decision"><span class="label">Entscheidung</span><p>Wann nachgefasst wird, bestimmen feste Regeln. Die KI formuliert, der Mensch liest, ändert und sendet.</p></div>
+            <div class="decision"><b>Entscheidung</b><p>Wann nachgefasst wird, bestimmen feste Regeln. Die KI formuliert, der Mensch liest, ändert und sendet.</p></div>
             <div class="stack"><span>Claude API</span><span>Gmail API</span><span>Google OAuth</span><span>Supabase</span><span>Vercel Cron</span></div>
           </div>
         </article>
 
         <article class="work">
           <div class="work-id">
-            <p class="label">Interne Organisation</p>
+            <span class="label plain">Interne Organisation</span>
             <h3>Task Management</h3>
             <p class="for">Offene Punkte aus dem eigenen Postausgang</p>
           </div>
           <div class="work-body">
             <p>Das Tool liest die gesendeten E-Mails mehrerer Postfächer, erkennt darin gestellte Fragen und delegierte Aufgaben und verfolgt, ob eine Antwort kommt. Nichts, was rausgegangen ist, geht mehr verloren.</p>
-            <ul>
+            <ul class="dots">
               <li>Abgleich zweier Postfächer alle 15 Minuten</li>
               <li>Zuordnung zu fünf Geschäftsbereichen</li>
               <li>Fristen in Werktagen, mit bayerischen Feiertagen</li>
@@ -472,20 +463,20 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
               <li>Antworterkennung und Vorschlag für den nächsten Schritt</li>
               <li>Tages-Mail werktags um 8 Uhr</li>
             </ul>
-            <div class="decision"><span class="label">Entscheidung</span><p>Ein regelbasierter Vorfilter sortiert rund 60 % der Mails aus, bevor ein Modell sie sieht. Die Auswertung läuft in geplanten Claude-Code-Sitzungen und damit ohne zusätzliche API-Kosten.</p></div>
+            <div class="decision"><b>Entscheidung</b><p>Ein regelbasierter Vorfilter sortiert rund 60 % der Mails aus, bevor ein Modell sie sieht. Die Auswertung läuft in geplanten Claude-Code-Sitzungen und damit ohne zusätzliche API-Kosten.</p></div>
             <div class="stack"><span>Claude Code</span><span>IMAP / SMTP</span><span>Supabase</span><span>Next.js</span><span>Vercel</span></div>
           </div>
         </article>
 
         <article class="work">
           <div class="work-id">
-            <p class="label">Lernen · Weiterbildung</p>
+            <span class="label plain">Lernen · Weiterbildung</span>
             <h3>AI English Coach</h3>
             <p class="for">Fachenglisch für hochwertigen Innenausbau</p>
           </div>
           <div class="work-body">
             <p>Ein persönlicher Sprachtrainer für die Fachsprache einer Branche: Ausschreibung, Bauleitung, Qualitätskontrolle, Kundenkommunikation. Mit Vokabeln aus echten Quellen statt aus dem Lehrbuch.</p>
-            <ul>
+            <ul class="dots">
               <li>Wiederholung im optimalen Abstand (Spaced Repetition)</li>
               <li>Dialogtraining mit Bewertung durch Claude</li>
               <li>Aussprache als Audio per Sprachsynthese</li>
@@ -493,7 +484,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
               <li>Semantische Suche über das eigene Wissen</li>
               <li>Tägliche Lern-Mail</li>
             </ul>
-            <div class="decision"><span class="label">Entscheidung</span><p>Jedes Modell übernimmt, was es am besten kann: Claude coacht und bewertet, OpenAI liefert Embeddings und Stimme.</p></div>
+            <div class="decision"><b>Entscheidung</b><p>Jedes Modell übernimmt, was es am besten kann: Claude coacht und bewertet, OpenAI liefert Embeddings und Stimme.</p></div>
             <div class="stack"><span>Claude</span><span>OpenAI</span><span>pgvector</span><span>Supabase</span><span>Resend</span><span>Vercel</span></div>
           </div>
         </article>
@@ -505,7 +496,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
   <section id="technik" class="tint">
     <div class="wrap">
       <div class="sec-head">
-        <p class="label">Werkzeugkasten</p>
+        <span class="label">Werkzeugkasten</span>
         <div>
           <h2>Aktuelle Technik, frei vom Anbieter gewählt.</h2>
           <p class="muted">Ich lege mich auf kein Modell und keine Plattform fest. Die Auswahl richtet sich nach Aufgabe, Datenschutz und Betriebskosten, und sie wird im Workshop gemeinsam getroffen.</p>
@@ -513,7 +504,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
       </div>
       <div class="tools">
         <div>
-          <p class="label">Modelle</p>
+          <span class="label plain">Modelle</span>
           <dl>
             <dt>Claude</dt><dd>Texte, Analyse, Berichte, Coaching, lange Kontexte</dd>
             <dt>ChatGPT / OpenAI</dt><dd>Embeddings, Sprachsynthese, breite Anwendungsfälle</dd>
@@ -521,7 +512,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
           </dl>
         </div>
         <div>
-          <p class="label">Entwicklung</p>
+          <span class="label plain">Entwicklung</span>
           <dl>
             <dt>Claude Code</dt><dd>KI-gestützte Entwicklung in hohem Tempo</dd>
             <dt>GitHub</dt><dd>Versionierung, Review, nachvollziehbare Historie</dd>
@@ -529,7 +520,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
           </dl>
         </div>
         <div>
-          <p class="label">Betrieb</p>
+          <span class="label plain">Betrieb</span>
           <dl>
             <dt>Vercel</dt><dd>Hosting, Deployments, zeitgesteuerte Läufe</dd>
             <dt>Supabase</dt><dd>Postgres, Login, Dateiablage, Rechte je Datensatz</dd>
@@ -537,7 +528,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
           </dl>
         </div>
         <div>
-          <p class="label">Schnittstellen</p>
+          <span class="label plain">Schnittstellen</span>
           <dl>
             <dt>Stripe</dt><dd>Zahlungen, Abos, Gutscheine, Webhooks</dd>
             <dt>Gmail · Google APIs · IMAP</dt><dd>Postfächer lesen, Entwürfe anlegen, Mails senden</dd>
@@ -546,7 +537,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
         </div>
       </div>
       <div class="tools-note">
-        <p class="label">Tempo und Erfahrung</p>
+        <span class="label">Tempo und Erfahrung</span>
         <p>Mit KI-gestützter Entwicklung setze ich heute in Wochen um, wofür früher ein Team mehrere Monate brauchte. Dreißig Jahre Projekterfahrung sorgen dafür, dass in dieser Zeit das Richtige entsteht: mit sauberer Architektur, abgesicherten Daten und einer Oberfläche, die Nutzer verstehen.</p>
       </div>
     </div>
@@ -555,7 +546,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
   <section id="angebot">
     <div class="wrap">
       <div class="sec-head">
-        <p class="label">Angebot und Ablauf</p>
+        <span class="label">Angebot und Ablauf</span>
         <div>
           <h2>Vom ersten Workshop bis zur Übergabe. In drei Schritten.</h2>
           <p class="muted">Der Workshop ist auch einzeln buchbar. Viele Kunden nutzen ihn, um intern eine belastbare Entscheidungsgrundlage zu schaffen, bevor sie über die Umsetzung entscheiden.</p>
@@ -573,7 +564,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
           <span class="num">1</span>
           <h3>Workshop zur Projektdefinition</h3>
           <p>Mit Geschäftsführung und den Fachbereichen, die das Tool später nutzen. Vor Ort oder remote.</p>
-          <ul>
+          <ul class="dots">
             <li>Ziele, Nutzen und Erfolgskriterien</li>
             <li>Prozesse, Beteiligte und Rollen</li>
             <li>Daten, Systeme und Schnittstellen</li>
@@ -586,7 +577,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
           <span class="num">2</span>
           <h3>Konzeption und UX</h3>
           <p>Aus der Projektdefinition wird ein Bauplan, den Sie vor dem ersten Code freigeben.</p>
-          <ul>
+          <ul class="dots">
             <li>Informationsarchitektur und Klickpfade</li>
             <li>Gestaltung der wichtigsten Ansichten</li>
             <li>Rechte-Matrix und Datenmodell</li>
@@ -599,7 +590,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
           <span class="num">3</span>
           <h3>Umsetzung und Übergabe</h3>
           <p>Gebaut wird in klar abgegrenzten Phasen. Nach jeder Phase sehen und testen Sie einen lauffähigen Stand.</p>
-          <ul>
+          <ul class="dots">
             <li>Entwicklung mit Tests und Sicherheitsprüfung</li>
             <li>Anbindung Ihrer Systeme und Zahlungsanbieter</li>
             <li>Einrichtung auf Ihren eigenen Konten</li>
@@ -615,7 +606,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
   <section id="projekt" class="tint">
     <div class="wrap">
       <div class="sec-head">
-        <p class="label">Projekt statt Abo</p>
+        <span class="label">Projekt statt Abo</span>
         <div>
           <h2>Sie kaufen ein Werkzeug. Keine Lizenz und keine Abhängigkeit.</h2>
           <p class="muted">Jede Zusammenarbeit ist ein Projekt mit Anfang, Ende und festem Preis. Was entsteht, gehört Ihnen vollständig.</p>
@@ -649,7 +640,10 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
   <section id="person">
     <div class="wrap person">
       <div class="person-side">
-        <p class="label">Über mich</p>
+        <span class="label">Über mich</span>
+        <figure class="portrait">
+          <img src="img/martin-bauer.jpg" alt="Porträt Martin Bauer" width="768" height="768" decoding="async">
+        </figure>
         <h2>Martin Bauer</h2>
         <p class="muted">Gründer von COCO, Berater für Konzeption und digitale Strategie, München</p>
       </div>
@@ -663,14 +657,16 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
           <div><b>pleyces</b><span>Soziales Netzwerk für Reisende.</span></div>
         </div>
         <p class="clients">Erfahrung aus Projekten für Startups, Mittelstand und Konzerne in nahezu allen Branchen, unter anderem für <b>Zeppelin Baumaschinen</b>, <b>Develey</b>, <b>Stiebel Eltron</b>, <b>PlanetHome</b>, <b>BAUR</b>, <b>carwow</b>, <b>estos</b>, <b>Fogra</b>, <b>ITD</b>, <b>Zero Insurance</b> und <b>HateAid</b>. Branchen: Industrie, Software, Finanzen, Immobilien, Pharma, E-Commerce, Dienstleistungen und Non-Profit.</p>
-        <blockquote>
-          <p>„Der Workshop mit Martin Bauer war top vorbereitet und über zwei Tage so voll mit spannendem Wissen, dass wir beide Male gerne überzogen haben.“</p>
-          <footer>Merlin Faude, Gründer und Geschäftsführer, Wut Coaches</footer>
-        </blockquote>
-        <blockquote>
-          <p>„Was ich besonders geschätzt habe: Zusammenarbeit auf Augenhöhe, hohes Maß an Zuverlässigkeit, Flexibilität und der stetige Überblick auf das große Ganze.“</p>
-          <footer>Lina Lotta Landgraf, Digital Marketing Specialist, Dassault Systèmes</footer>
-        </blockquote>
+        <div class="quotes">
+          <blockquote>
+            <p>„Der Workshop mit Martin Bauer war top vorbereitet und über zwei Tage so voll mit spannendem Wissen, dass wir beide Male gerne überzogen haben.“</p>
+            <footer>Merlin Faude, Gründer und Geschäftsführer, Wut Coaches</footer>
+          </blockquote>
+          <blockquote>
+            <p>„Was ich besonders geschätzt habe: Zusammenarbeit auf Augenhöhe, hohes Maß an Zuverlässigkeit, Flexibilität und der stetige Überblick auf das große Ganze.“</p>
+            <footer>Lina Lotta Landgraf, Digital Marketing Specialist, Dassault Systèmes</footer>
+          </blockquote>
+        </div>
       </div>
     </div>
   </section>
@@ -678,21 +674,21 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
   <section id="kontakt" class="contact">
     <div class="wrap">
       <div class="contact-text">
-        <p class="label">Erstes Gespräch</p>
+        <span class="label">Erstes Gespräch</span>
         <h2>Welches Werkzeug fehlt Ihrem Team?</h2>
         <p>In 30 Minuten klären wir, welcher Prozess sich lohnt, was ein Workshop leisten kann und wie ein Projekt aussehen würde. Unverbindlich und persönlich.</p>
         <p class="fine">Diese Seite ist nicht öffentlich gelistet und wird nur auf persönliche Empfehlung weitergegeben.</p>
       </div>
       <div class="channels">
         <div class="channel">
-          <span class="label">E-Mail</span>
+          <span class="fine">E-Mail</span>
           <div class="row">
-            <a href="mailto:mb@coco-consulting.de?subject=Anfrage%20Ma%C3%9Fwerk" id="mail">mb@coco-consulting.de</a>
+            <a href="mailto:mb@coco-consulting.de?subject=Anfrage%20KI-Werkstatt" id="mail">mb@coco-consulting.de</a>
             <button class="copy" type="button" data-copy="mb@coco-consulting.de" id="copy-mail">Kopieren</button>
           </div>
         </div>
         <div class="channel">
-          <span class="label">Telefon und WhatsApp</span>
+          <span class="fine">Telefon und WhatsApp</span>
           <div class="row">
             <a href="tel:+491771977275" id="tel">+49 177 1977275</a>
             <button class="copy" type="button" data-copy="+49 177 1977275" id="copy-tel">Kopieren</button>
@@ -706,168 +702,33 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
 
 <footer class="foot">
   <div class="wrap">
-    <span>Maßwerk ist ein Angebot von COCO Consulting · Martin Bauer · Jahnstr. 25 · 80469 München</span>
-    <nav aria-label="Rechtliches">
-      <a href="https://coco-consulting.de/impressum/">Impressum und Datenschutz</a>
-    </nav>
+    <span>COCO Consulting · Martin Bauer · Jahnstr. 25 · 80469 München</span>
+    <a href="https://coco-consulting.de/impressum/">Impressum und Datenschutz</a>
   </div>
 </footer>
 
 <script>
-(function () {
-  // Kopierknöpfe
-  document.querySelectorAll('.copy').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var text = btn.getAttribute('data-copy');
-      var done = function () { btn.textContent = 'Kopiert'; setTimeout(function () { btn.textContent = 'Kopieren'; }, 1800); };
-      var fallback = function () {
-        var link = btn.parentNode.querySelector('a');
-        var range = document.createRange();
-        range.selectNodeContents(link);
-        var sel = window.getSelection();
-        sel.removeAllRanges();
-        sel.addRange(range);
-        btn.textContent = 'Markiert';
-        setTimeout(function () { btn.textContent = 'Kopieren'; }, 1800);
-      };
-      try {
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text).then(done, fallback);
-        } else { fallback(); }
-      } catch (e) { fallback(); }
-    });
+document.querySelectorAll('.copy').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var text = btn.getAttribute('data-copy');
+    var reset = function () { setTimeout(function () { btn.textContent = 'Kopieren'; }, 1800); };
+    var fallback = function () {
+      var link = btn.parentNode.querySelector('a');
+      var range = document.createRange();
+      range.selectNodeContents(link);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      btn.textContent = 'Markiert';
+      reset();
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { btn.textContent = 'Kopiert'; reset(); }, fallback);
+      } else { fallback(); }
+    } catch (e) { fallback(); }
   });
-
-  // Maßwerk-Rosette: Vierpass im Kreis, aus Zirkel und Lineal konstruiert
-  var canvas = document.getElementById('rosette');
-  if (!canvas || !canvas.getContext) return;
-  var ctx = canvas.getContext('2d');
-
-  function token(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
-
-  function circle(x, y, r) { ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.stroke(); }
-
-  function draw() {
-    var size = canvas.clientWidth;
-    if (!size) return;
-    var dpr = window.devicePixelRatio || 1;
-    canvas.width = Math.round(size * dpr);
-    canvas.height = Math.round(size * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.clearRect(0, 0, size, size);
-
-    var ink = token('--ink'), soft = token('--ink-soft'), line = token('--line'), brass = token('--brass');
-    var mono = '500 ' + Math.max(9, size * 0.028) + 'px ' + token('--f-mono');
-    var cx = size / 2, cy = size * 0.46, R = size * 0.38;
-
-    // Zeichenraster
-    ctx.lineWidth = 1;
-    ctx.strokeStyle = line;
-    ctx.globalAlpha = 0.45;
-    var step = size / 16;
-    for (var g = step; g < size; g += step) {
-      ctx.beginPath(); ctx.moveTo(g, 0); ctx.lineTo(g, size); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(0, g); ctx.lineTo(size, g); ctx.stroke();
-    }
-    ctx.globalAlpha = 1;
-
-    // Konstruktionslinien
-    ctx.setLineDash([3, 4]);
-    ctx.strokeStyle = soft;
-    ctx.lineWidth = 0.8;
-    ctx.beginPath(); ctx.moveTo(cx - R * 1.15, cy); ctx.lineTo(cx + R * 1.15, cy); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(cx, cy - R * 1.15); ctx.lineTo(cx, cy + R * 1.15); ctx.stroke();
-    var d45 = R * 1.05 * Math.SQRT1_2;
-    ctx.beginPath(); ctx.moveTo(cx - d45, cy - d45); ctx.lineTo(cx + d45, cy + d45); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(cx + d45, cy - d45); ctx.lineTo(cx - d45, cy + d45); ctx.stroke();
-    circle(cx, cy, R * 1.06);
-    ctx.setLineDash([]);
-
-    // Rahmen
-    ctx.strokeStyle = ink;
-    ctx.lineWidth = 1.6;
-    circle(cx, cy, R);
-    ctx.lineWidth = 1;
-    circle(cx, cy, R * 0.93);
-
-    // Vierpass: vier Kreise, die einander und den Innenkreis berühren
-    var Rin = R * 0.93, n = 4, s = Math.sin(Math.PI / n);
-    var dist = Rin / (1 + s), rf = dist * s;
-    ctx.lineWidth = 1.3;
-    for (var i = 0; i < n; i++) {
-      var a = -Math.PI / 2 + i * (2 * Math.PI / n);
-      var fx = cx + dist * Math.cos(a), fy = cy + dist * Math.sin(a);
-      ctx.strokeStyle = ink;
-      circle(fx, fy, rf);
-      ctx.lineWidth = 0.8;
-      circle(fx, fy, rf * 0.84);
-      ctx.lineWidth = 1.3;
-      // Zirkeleinstich
-      ctx.fillStyle = soft;
-      ctx.beginPath(); ctx.arc(fx, fy, 1.6, 0, Math.PI * 2); ctx.fill();
-    }
-
-    // Kleine Zwickelkreise zwischen den Pässen
-    var gapA = Math.PI / n;
-    var gd = Rin * 0.84, gr = Rin * 0.1;
-    ctx.lineWidth = 1;
-    for (var j = 0; j < n; j++) {
-      var b = -Math.PI / 2 + gapA + j * (2 * Math.PI / n);
-      circle(cx + gd * Math.cos(b), cy + gd * Math.sin(b), gr);
-    }
-
-    // Zentrum in Messing
-    ctx.strokeStyle = brass;
-    ctx.lineWidth = 1.6;
-    var cr = dist - rf * 0.84;
-    var inner = cr * 0.95;
-    circle(cx, cy, inner);
-    var s2 = Math.sin(Math.PI / 4), d2 = inner / (1 + s2), r2 = d2 * s2;
-    ctx.lineWidth = 1.1;
-    for (var k = 0; k < 4; k++) {
-      var c = -Math.PI / 4 + k * (Math.PI / 2);
-      circle(cx + d2 * Math.cos(c), cy + d2 * Math.sin(c), r2);
-    }
-
-    // Maßlinie unter der Rosette
-    var y = cy + R + size * 0.075;
-    ctx.strokeStyle = soft;
-    ctx.lineWidth = 0.9;
-    ctx.beginPath(); ctx.moveTo(cx - R, cy + R * 0.2); ctx.lineTo(cx - R, y + 6); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(cx + R, cy + R * 0.2); ctx.lineTo(cx + R, y + 6); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(cx - R, y); ctx.lineTo(cx + R, y); ctx.stroke();
-    [cx - R, cx + R].forEach(function (x) {
-      ctx.beginPath(); ctx.moveTo(x - 4, y + 4); ctx.lineTo(x + 4, y - 4); ctx.stroke();
-    });
-    ctx.fillStyle = soft;
-    ctx.font = mono;
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'bottom';
-    var labelW = ctx.measureText('Ø NACH MASS').width + 14;
-    ctx.fillStyle = token('--paper');
-    ctx.fillRect(cx - labelW / 2, y - size * 0.045, labelW, size * 0.04);
-    ctx.fillStyle = soft;
-    ctx.fillText('Ø NACH MASS', cx, y - 4);
-
-    // Radius-Angabe
-    var ra = -Math.PI / 5;
-    ctx.strokeStyle = brass;
-    ctx.lineWidth = 0.9;
-    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + R * Math.cos(ra), cy + R * Math.sin(ra)); ctx.stroke();
-    ctx.fillStyle = brass;
-    ctx.textAlign = 'left';
-    ctx.textBaseline = 'middle';
-    ctx.fillText('R', cx + R * Math.cos(ra) + 8, cy + R * Math.sin(ra) - 6);
-  }
-
-  var raf = 0;
-  function redraw() { cancelAnimationFrame(raf); raf = requestAnimationFrame(draw); }
-  redraw();
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(redraw);
-  window.addEventListener('resize', redraw);
-  try { window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', redraw); } catch (e) {}
-  try { new MutationObserver(redraw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
-})();
+});
 </script>
 </body>
 </html>
