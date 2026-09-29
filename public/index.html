@@ -3,28 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>COCO KI-Werkstatt</title>
-<meta name="description" content="COCO KI-Werkstatt: KI-Werkzeuge nach Maß. Workshops, Konzeption und komplette Umsetzung als abgeschlossenes Projekt. Martin Bauer, COCO Consulting.">
+<title>AI Architekt</title>
+<meta name="description" content="AI Architekt: KI-Werkzeuge nach Maß. Workshops, Konzeption und komplette Umsetzung als abgeschlossenes Projekt. Martin Bauer, MB Services GmbH.">
 <meta name="robots" content="noindex, nofollow, noarchive">
-<meta name="theme-color" content="#383338">
-<link rel="icon" type="image/png" href="img/coco-logo.png">
+<meta name="theme-color" content="#101826">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="preload" href="fonts/maven-pro-normal-400-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
-/* Layout: COCO-Markenwelt. Dunkle Aubergine-Flächen für Einstieg und Kontakt, helle Arbeitsflächen dazwischen; Zitronengelb nur als Marker. Linksbündiges Raster, Maßkette im Ablauf. */
+/* Layout: Architekturbüro. Dunkle Planflächen mit Raster für Einstieg und Kontakt, helle Arbeitsflächen dazwischen, Kobaltblau als Strich- und Akzentfarbe wie auf einer Blaupause. Jedes Referenzwerkzeug zeigt seinen Aufbau als Ablaufskizze. */
 :root {
-  --bg: #ffffff;
-  --bg-2: #efeff0;
-  --ink: #383338;
-  --ink-soft: #685e68;
-  --line: #dbd7db;
-  --bullet: #383338;
-  --lemon: #eaff00;
-  --on-lemon: #383338;
-  --deep: #383338;
-  --deep-fg: #f4f3f4;
-  --deep-soft: #bdb3bd;
-  --deep-line: #544c54;
+  --bg: #f4f5f7;
+  --bg-2: #e9ecf1;
+  --card: #ffffff;
+  --ink: #141c27;
+  --ink-soft: #566171;
+  --line: #d2d8e1;
+  --accent: #2446d8;
+  --accent-soft: #e2e8fc;
+  --on-accent: #ffffff;
+
+  --plan: #101826;
+  --plan-fg: #edf1f7;
+  --plan-soft: #9aa7ba;
+  --plan-line: #25324a;
+  --plan-grid: rgba(143, 168, 255, .07);
+  --plan-accent: #86a0ff;
+  --plan-plate: #152136;
 
   --f-display: "Maven Pro", "Avenir Next", "Segoe UI", Arial, sans-serif;
   --f-body: "Maven Pro", "Avenir Next", "Segoe UI", Arial, sans-serif;
@@ -35,34 +40,42 @@
   --s-md: 1.06rem;
   --s-lg: 1.3rem;
   --s-xl: clamp(1.7rem, 1.2rem + 1.8vw, 2.5rem);
-  --s-2xl: clamp(2.3rem, 1.3rem + 3.8vw, 4.2rem);
+  --s-2xl: clamp(2.3rem, 1.3rem + 3.6vw, 4rem);
 
-  --wrap: 72rem;
+  --wrap: 74rem;
   --gutter: clamp(1rem, .5rem + 2.5vw, 2.5rem);
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #1d1a1d;
-    --bg-2: #272327;
-    --ink: #efeff0;
-    --ink-soft: #b5abb5;
-    --line: #3e383e;
-    --bullet: #eaff00;
-    --deep: #383338;
-    --deep-line: #5a525a;
+    --bg: #0e131b;
+    --bg-2: #141b26;
+    --card: #19212e;
+    --ink: #e7ebf2;
+    --ink-soft: #a0abbc;
+    --line: #29334a;
+    --accent: #8aa4ff;
+    --accent-soft: #1e2944;
+    --on-accent: #0e131b;
+    --plan: #0a1019;
+    --plan-line: #222e44;
+    --plan-plate: #111b2c;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #1d1a1d;
-  --bg-2: #272327;
-  --ink: #efeff0;
-  --ink-soft: #b5abb5;
-  --line: #3e383e;
-  --bullet: #eaff00;
-  --deep: #383338;
-  --deep-line: #5a525a;
+  --bg: #0e131b;
+  --bg-2: #141b26;
+  --card: #19212e;
+  --ink: #e7ebf2;
+  --ink-soft: #a0abbc;
+  --line: #29334a;
+  --accent: #8aa4ff;
+  --accent-soft: #1e2944;
+  --on-accent: #0e131b;
+  --plan: #0a1019;
+  --plan-line: #222e44;
+  --plan-plate: #111b2c;
   color-scheme: dark;
 }
 
@@ -78,10 +91,10 @@ body {
   line-height: 1.62;
   -webkit-font-smoothing: antialiased;
 }
-img { max-width: 100%; display: block; }
+img, svg { max-width: 100%; display: block; }
 a { color: inherit; }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--lemon); outline-offset: 3px; }
-::selection { background: var(--lemon); color: var(--on-lemon); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+::selection { background: var(--accent); color: var(--on-accent); }
 
 .wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gutter); }
 
@@ -90,128 +103,170 @@ h2 { font-size: var(--s-xl); }
 h3 { font-size: var(--s-lg); font-weight: 600; }
 p { margin: 0; }
 .label {
-  display: inline-block;
-  justify-self: start;
-  align-self: start;
-  font-family: var(--f-label);
-  font-size: var(--s-xs);
-  font-weight: 500;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  line-height: 1.3;
-  padding: .28rem .55rem .24rem;
-  background: var(--lemon);
-  color: var(--on-lemon);
+  display: inline-flex; align-items: center; gap: .55rem;
+  justify-self: start; align-self: start;
+  font-family: var(--f-label); font-size: var(--s-xs); font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase; line-height: 1.3;
+  color: var(--accent);
 }
-.label.plain { background: none; padding: 0; color: var(--ink-soft); }
+.label::before { content: ""; width: 1.4rem; border-top: 2px solid currentColor; }
+.label.bare::before { display: none; }
 .muted { color: var(--ink-soft); }
-.mark {
-  background: var(--lemon);
-  color: var(--on-lemon);
-  padding: 0 .12em;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
 ul.dots { margin: 0; padding: 0; list-style: none; display: grid; gap: .4rem; font-size: var(--s-sm); }
 ul.dots li { padding-left: 1.05rem; position: relative; }
-ul.dots li::before { content: ""; position: absolute; left: 0; top: .62em; width: .4rem; height: .4rem; background: var(--bullet); }
+ul.dots li::before { content: ""; position: absolute; left: 0; top: .6em; width: .42rem; height: .42rem; border: 1.5px solid var(--accent); }
+
+/* ---------- Plan-Flächen (Einstieg, Kontakt) ---------- */
+.plan {
+  background-color: var(--plan);
+  background-image:
+    linear-gradient(var(--plan-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--plan-grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: var(--plan-fg);
+}
 
 /* ---------- Kopfzeile ---------- */
 .bar {
-  position: sticky;
-  top: env(safe-area-inset-top, 0px);
-  z-index: 10;
-  background: var(--deep);
-  color: var(--deep-fg);
-  border-bottom: 1px solid var(--deep-line);
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: var(--plan); color: var(--plan-fg);
+  border-bottom: 1px solid var(--plan-line);
 }
-.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .55rem; }
-.brand { display: flex; align-items: center; gap: .9rem; text-decoration: none; min-width: 0; }
-.brand img { height: 44px; width: auto; margin-block: -6px; }
-.brand span { font-family: var(--f-label); font-weight: 500; font-size: .95rem; letter-spacing: .04em; white-space: nowrap; padding-left: .9rem; border-left: 1px solid var(--deep-line); }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .75rem; }
+.brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; min-width: 0; }
+.brand svg { width: 34px; height: 34px; flex: none; }
+.brand b { font-family: var(--f-display); font-weight: 700; font-size: 1.22rem; letter-spacing: -.01em; white-space: nowrap; }
+.brand b span { color: var(--plan-accent); }
 .nav { display: flex; gap: 1.6rem; align-items: center; font-size: var(--s-sm); }
-.nav a { text-decoration: none; color: var(--deep-soft); }
-.nav a:hover { color: var(--deep-fg); }
-.nav a.cta-sm { color: var(--on-lemon); background: var(--lemon); font-weight: 600; padding: .45rem .9rem; }
-.nav a.cta-sm:hover { color: var(--on-lemon); background: var(--deep-fg); }
-@media (max-width: 56rem) { .nav a:not(.cta-sm) { display: none; } }
-@media (max-width: 30rem) { .nav .long { display: none; } .brand { gap: .7rem; } .brand span { padding-left: .7rem; font-size: .88rem; } }
-@media (max-width: 20rem) { .brand span { display: none; } }
+.nav a { text-decoration: none; color: var(--plan-soft); }
+.nav a:hover { color: var(--plan-fg); }
+.nav a.cta-sm { color: var(--plan); background: var(--plan-fg); font-weight: 600; padding: .5rem .95rem; }
+.nav a.cta-sm:hover { background: var(--plan-accent); }
+@media (max-width: 58rem) { .nav a:not(.cta-sm) { display: none; } }
+@media (max-width: 30rem) { .nav .long { display: none; } }
+
+/* Logo-Zeichen */
+.logo-line { fill: none; stroke: var(--plan-fg); stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; }
+.logo-node { fill: var(--plan-accent); }
 
 /* ---------- Einstieg ---------- */
-.hero { background: var(--deep); color: var(--deep-fg); padding-block: clamp(3rem, 2rem + 5vw, 6.5rem) clamp(3rem, 2rem + 4vw, 5.5rem); }
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: clamp(2rem, 1rem + 4vw, 5rem); align-items: end; }
+.hero { padding-block: clamp(3rem, 2rem + 4vw, 5.5rem) clamp(2.5rem, 2rem + 3vw, 4.5rem); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(2rem, 1rem + 4vw, 4.5rem); align-items: center; }
 .hero-text { display: grid; gap: 1.6rem; min-width: 0; }
-.hero h1 { font-size: var(--s-2xl); font-weight: 700; line-height: 1.06; }
-.hero h1 .thin { font-weight: 400; color: var(--deep-soft); }
-.lead { font-size: clamp(1.05rem, 1rem + .3vw, 1.22rem); max-width: 36rem; color: var(--deep-soft); }
-.lead strong { color: var(--deep-fg); font-weight: 600; }
+.hero .label { color: var(--plan-accent); }
+.hero h1 { font-size: var(--s-2xl); line-height: 1.06; }
+.hero h1 em { font-style: normal; color: var(--plan-accent); }
+.lead { font-size: clamp(1.05rem, 1rem + .3vw, 1.2rem); max-width: 36rem; color: var(--plan-soft); }
+.lead strong { color: var(--plan-fg); font-weight: 600; }
 .actions { display: flex; flex-wrap: wrap; gap: .8rem; }
 .btn {
   display: inline-flex; align-items: center; gap: .6rem;
   font: 600 var(--s-sm)/1 var(--f-body);
-  padding: 1rem 1.4rem;
-  text-decoration: none;
-  border: 1px solid transparent;
+  padding: 1rem 1.4rem; text-decoration: none; border: 1px solid transparent;
   transition: background-color .2s, color .2s, border-color .2s;
 }
-.btn-primary { background: var(--lemon); color: var(--on-lemon); }
-.btn-primary:hover { background: var(--deep-fg); }
-.btn-ghost { border-color: var(--deep-soft); color: var(--deep-fg); }
-.btn-ghost:hover { border-color: var(--lemon); color: var(--lemon); }
-.btn svg { width: 1rem; height: 1rem; stroke: currentColor; fill: none; stroke-width: 2; }
+.btn-primary { background: var(--plan-accent); color: var(--plan); }
+.btn-primary:hover { background: var(--plan-fg); }
+.btn-ghost { border-color: var(--plan-line); color: var(--plan-fg); }
+.btn-ghost:hover { border-color: var(--plan-accent); color: var(--plan-accent); }
+.hero-figure { min-width: 0; }
 
-.facts { display: grid; gap: 0; min-width: 0; }
-.fact { display: grid; grid-template-columns: 7.2rem minmax(0, 1fr); gap: 1rem; align-items: baseline; padding-block: .95rem; border-top: 1px solid var(--deep-line); }
-.fact:last-child { border-bottom: 1px solid var(--deep-line); }
-.fact b { font-family: var(--f-display); font-weight: 700; font-size: clamp(2rem, 1.6rem + 1.2vw, 2.7rem); line-height: 1; color: var(--lemon); font-variant-numeric: lining-nums tabular-nums; }
-.fact span { font-size: var(--s-sm); color: var(--deep-soft); }
-@media (max-width: 56rem) { .hero .wrap { grid-template-columns: minmax(0, 1fr); } }
+/* Isometrische Zeichnung */
+.iso { width: 100%; height: auto; overflow: visible; }
+.iso-top { fill: var(--plan-plate); stroke: var(--plan-fg); stroke-width: 1.3; stroke-linejoin: round; }
+.iso-side-l { fill: var(--plan-line); stroke: var(--plan-fg); stroke-width: 1; stroke-linejoin: round; }
+.iso-side-r { fill: var(--plan); stroke: var(--plan-fg); stroke-width: 1; stroke-linejoin: round; }
+.is-ai .iso-top { fill: color-mix(in srgb, var(--plan-accent) 22%, var(--plan)); stroke: var(--plan-accent); }
+.is-ai .iso-side-l, .is-ai .iso-side-r { stroke: var(--plan-accent); }
+.iso-mark { fill: none; stroke: var(--plan-soft); stroke-width: 1; }
+.iso-mark-l { fill: none; stroke: var(--plan-soft); stroke-width: 1; }
+.is-ai .iso-mark-l { stroke: var(--plan-accent); }
+.iso-node { fill: var(--plan); stroke: var(--plan-fg); stroke-width: 1.2; }
+.is-ai .iso-node { stroke: var(--plan-accent); }
+.iso-core { fill: var(--plan-accent); }
+.iso-cons { stroke: var(--plan-soft); stroke-width: .8; stroke-dasharray: 3 4; opacity: .55; }
+.iso-lead { stroke: var(--plan-soft); stroke-width: .8; }
+.iso-label { fill: var(--plan-fg); font-family: var(--f-display); font-weight: 600; font-size: 15px; }
+.iso-sub { fill: var(--plan-soft); font-family: var(--f-label); font-size: 11.5px; }
+.iso-dim { stroke: var(--plan-soft); stroke-width: 1; }
+.iso-dimtext { fill: var(--plan-soft); font-family: var(--f-label); font-size: 10.5px; letter-spacing: .14em; }
+
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; margin-top: clamp(2.5rem, 2rem + 2vw, 4rem); padding-top: 1.5rem; border-top: 1px solid var(--plan-line); }
+.fact { display: grid; gap: .3rem; min-width: 0; }
+.fact b { font-family: var(--f-display); font-weight: 700; font-size: clamp(1.9rem, 1.5rem + 1.2vw, 2.6rem); line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
+.fact b span { color: var(--plan-accent); }
+.fact > span { font-size: var(--s-sm); color: var(--plan-soft); }
+@media (max-width: 58rem) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero-figure { max-width: 34rem; }
+}
+@media (max-width: 40rem) { .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* ---------- Sektionen ---------- */
 section { padding-block: clamp(3.2rem, 2.2rem + 4vw, 6rem); scroll-margin-top: 4rem; }
 .tint { background: var(--bg-2); }
 .sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 1rem clamp(1.5rem, 1rem + 3vw, 4rem); margin-bottom: clamp(2rem, 1.5rem + 2vw, 3.5rem); }
-.sec-head .label { margin-top: .5rem; }
+.sec-head .label { margin-top: .6rem; }
 .sec-head > div { display: grid; gap: 1rem; max-width: 42rem; }
-@media (max-width: 56rem) { .sec-head { grid-template-columns: minmax(0, 1fr); } .sec-head .label { margin-top: 0; } }
+@media (max-width: 58rem) { .sec-head { grid-template-columns: minmax(0, 1fr); } .sec-head .label { margin-top: 0; } }
 
 /* Drei Disziplinen */
 .trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, .8rem + 1.5vw, 2rem); }
-.trio article { display: grid; gap: .8rem; align-content: start; min-width: 0; padding: clamp(1.3rem, 1rem + 1vw, 1.8rem); background: var(--bg); }
-.trio .no { font-family: var(--f-label); font-weight: 700; font-size: var(--s-xs); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+.trio article { display: grid; gap: .8rem; align-content: start; min-width: 0; padding: clamp(1.3rem, 1rem + 1vw, 1.8rem); background: var(--card); border: 1px solid var(--line); }
+.trio svg { width: 44px; height: 44px; }
 .trio p { color: var(--ink-soft); font-size: var(--s-sm); line-height: 1.65; }
+.pict { fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linejoin: round; stroke-linecap: round; }
+.pict-a { fill: none; stroke: var(--accent); stroke-width: 1.4; stroke-linejoin: round; stroke-linecap: round; }
+.pict-dot { fill: var(--accent); }
 .one-hand { margin-top: clamp(2rem, 1.5rem + 2vw, 3rem); font-size: var(--s-lg); font-weight: 500; max-width: 46rem; line-height: 1.45; }
-@media (max-width: 56rem) { .trio { grid-template-columns: minmax(0, 1fr); } }
+.one-hand strong { color: var(--accent); font-weight: 700; }
+@media (max-width: 58rem) { .trio { grid-template-columns: minmax(0, 1fr); } }
 
 /* Referenzwerkzeuge */
 .works { display: grid; }
 .work {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
   gap: 1.2rem clamp(1.5rem, 1rem + 3vw, 4rem);
   padding-block: clamp(1.8rem, 1.4rem + 1.5vw, 2.6rem);
   border-top: 1px solid var(--line);
 }
 .work:last-child { border-bottom: 1px solid var(--line); }
 .work-id { display: grid; gap: .55rem; align-content: start; min-width: 0; }
+.work-id .kind { font-family: var(--f-label); font-size: var(--s-xs); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
 .work-id h3 { font-size: clamp(1.6rem, 1.3rem + 1vw, 2.1rem); font-weight: 700; }
 .work-id .for { font-size: var(--s-sm); color: var(--ink-soft); }
-.work-body { display: grid; gap: 1.1rem; min-width: 0; }
+.work-body { display: grid; gap: 1.15rem; min-width: 0; }
 .work-body ul.dots { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem 1.5rem; color: var(--ink-soft); }
-.decision { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .9rem; align-items: start; padding: 1rem 1.1rem; background: var(--bg-2); font-size: var(--s-sm); }
-.decision b { font-family: var(--f-label); font-weight: 700; font-size: var(--s-xs); letter-spacing: .1em; text-transform: uppercase; padding-top: .2rem; white-space: nowrap; }
+
+/* Ablaufskizze */
+.flow { display: grid; gap: .6rem; padding: 1rem 1.1rem 1.1rem; background: var(--card); border: 1px solid var(--line); }
+.flow-title { font-family: var(--f-label); font-size: var(--s-xs); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+.flow ol { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.5rem; }
+.flow li { position: relative; display: grid; min-width: 0; }
+.flow li + li::before { content: "\2192"; position: absolute; left: -1.5rem; width: 1.5rem; top: 50%; transform: translateY(-50%); text-align: center; color: var(--ink-soft); font-size: .95rem; line-height: 1; }
+.node { display: grid; gap: .1rem; align-content: start; padding: .5rem .65rem; border: 1px solid var(--line); background: var(--bg); font-size: .84rem; line-height: 1.3; }
+.node b { font-weight: 600; }
+.node small { font-family: var(--f-label); font-size: .72rem; color: var(--ink-soft); }
+.node.ai { border-color: var(--accent); background: var(--accent-soft); }
+.node.ai small { color: var(--accent); }
+.decision { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .9rem; align-items: start; font-size: var(--s-sm); }
+.decision b { font-family: var(--f-label); font-weight: 500; font-size: var(--s-xs); letter-spacing: .12em; text-transform: uppercase; padding-top: .2rem; white-space: nowrap; color: var(--accent); }
 .stack { display: flex; flex-wrap: wrap; gap: .4rem; }
 .stack span { font-family: var(--f-label); font-size: .76rem; padding: .22rem .55rem; border: 1px solid var(--line); color: var(--ink-soft); }
-@media (max-width: 56rem) {
+@media (max-width: 58rem) {
   .work { grid-template-columns: minmax(0, 1fr); }
   .work-body ul.dots { grid-template-columns: minmax(0, 1fr); }
-  .decision { grid-template-columns: minmax(0, 1fr); gap: .35rem; }
+  .decision { grid-template-columns: minmax(0, 1fr); gap: .3rem; }
+}
+@media (max-width: 40rem) {
+  .flow ol { grid-template-columns: minmax(0, 1fr); gap: 1.2rem; }
+  .flow li + li::before { content: "\2193"; left: 1rem; top: -1.2rem; width: auto; height: 1.2rem; transform: none; display: grid; place-items: center; }
 }
 
 /* Werkzeugkasten */
 .tools { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, .8rem + 1.5vw, 2rem); }
-.tools > div { display: grid; gap: .9rem; align-content: start; min-width: 0; padding: 1.3rem; background: var(--bg); }
+.tools > div { display: grid; gap: .9rem; align-content: start; min-width: 0; padding: 1.3rem; background: var(--card); border: 1px solid var(--line); }
+.tools h3 { font-size: 1.05rem; font-weight: 700; }
 .tools dl { margin: 0; display: grid; gap: .6rem; }
 .tools dt { font-weight: 600; font-size: var(--s-sm); }
 .tools dd { margin: 0; font-size: .86rem; color: var(--ink-soft); line-height: 1.5; }
@@ -219,82 +274,91 @@ section { padding-block: clamp(3.2rem, 2.2rem + 4vw, 6rem); scroll-margin-top: 4
 .tools-note p { max-width: 44rem; font-size: var(--s-lg); line-height: 1.5; font-weight: 500; }
 @media (max-width: 62rem) { .tools { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 40rem) { .tools { grid-template-columns: minmax(0, 1fr); } }
-@media (max-width: 56rem) { .tools-note { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 58rem) { .tools-note { grid-template-columns: minmax(0, 1fr); } }
 
-/* Ablauf mit Maßkette */
-.chain { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: 2rem; }
-.chain > div { position: relative; height: 2.4rem; border-left: 1px solid var(--ink); }
-.chain > div:last-child { border-right: 1px solid var(--ink); }
-.chain > div::before { content: ""; position: absolute; left: 0; right: 0; bottom: .55rem; border-top: 1px solid var(--ink); }
-.chain > div::after { content: ""; position: absolute; left: -4px; bottom: calc(.55rem - 4px); width: 8px; height: 8px; border-top: 1px solid var(--ink); transform: rotate(-45deg); }
-.chain > div:last-child span::after { content: ""; position: absolute; right: -4px; bottom: calc(.55rem - 4px); width: 8px; height: 8px; border-top: 1px solid var(--ink); transform: rotate(-45deg); }
-.chain span { position: absolute; left: 0; right: 0; top: 0; text-align: center; font-family: var(--f-label); font-size: var(--s-xs); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-inline: .5rem; }
-.phases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.2rem, 1rem + 1.5vw, 2.5rem); }
-.phase { display: grid; gap: .9rem; align-content: start; min-width: 0; }
-.phase .num { display: inline-grid; place-items: center; width: 2.6rem; height: 2.6rem; background: var(--lemon); color: var(--on-lemon); font-weight: 700; font-size: 1.3rem; }
+/* Ablauf */
+.phases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, .8rem + 1.5vw, 2rem); }
+.phase { display: grid; gap: .9rem; align-content: start; min-width: 0; padding: clamp(1.3rem, 1rem + 1vw, 1.8rem); background: var(--card); border: 1px solid var(--line); }
+.phase-fig { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; padding-bottom: .9rem; border-bottom: 1px dashed var(--line); }
+.phase-fig svg { width: 120px; height: 84px; }
+.phase-fig .step { font-family: var(--f-label); font-size: var(--s-xs); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); text-align: right; line-height: 1.5; }
+.phase-fig .step b { display: block; font-family: var(--f-display); font-size: 2rem; letter-spacing: 0; color: var(--accent); line-height: 1; }
 .phase p { font-size: var(--s-sm); color: var(--ink-soft); }
 .result { margin-top: .3rem; padding-top: .8rem; border-top: 1px solid var(--line); font-size: var(--s-sm); color: var(--ink) !important; }
 .result b { font-weight: 700; }
-@media (max-width: 56rem) {
-  .chain { display: none; }
-  .phases { grid-template-columns: minmax(0, 1fr); }
-}
+@media (max-width: 58rem) { .phases { grid-template-columns: minmax(0, 1fr); } }
 
 /* Projekt statt Abo */
 .terms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, .8rem + 1.5vw, 2rem); }
-.term { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); gap: .35rem 1rem; padding: 1.4rem; background: var(--bg); }
-.term svg { width: 1.8rem; height: 1.8rem; stroke: var(--ink); fill: none; stroke-width: 1.5; grid-row: span 2; }
+.term { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); gap: .35rem 1rem; padding: 1.4rem; background: var(--card); border: 1px solid var(--line); }
+.term svg { width: 1.8rem; height: 1.8rem; stroke: var(--accent); fill: none; stroke-width: 1.5; grid-row: span 2; }
 .term h3 { font-size: var(--s-md); font-weight: 700; line-height: 1.35; }
 .term p { font-size: var(--s-sm); color: var(--ink-soft); }
-@media (max-width: 56rem) { .terms { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 58rem) { .terms { grid-template-columns: minmax(0, 1fr); } }
 
 /* Person */
 .person { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 2rem clamp(1.5rem, 1rem + 3vw, 4rem); }
 .person-side { display: grid; gap: 1.1rem; align-content: start; min-width: 0; }
-.portrait { position: relative; margin: 0 .9rem .9rem 0; max-width: 22rem; }
-.portrait::before { content: ""; position: absolute; inset: .9rem -.9rem -.9rem .9rem; background: var(--lemon); }
-.portrait img { position: relative; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; filter: grayscale(1); }
-.person-side h2 { font-size: var(--s-xl); margin-top: .6rem; }
+.portrait { position: relative; margin: 0; max-width: 22rem; }
+.portrait img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; filter: grayscale(1) contrast(1.05); }
+.portrait::after {
+  content: ""; position: absolute; inset: -10px; pointer-events: none;
+  background:
+    linear-gradient(var(--accent), var(--accent)) left top / 22px 2px no-repeat,
+    linear-gradient(var(--accent), var(--accent)) left top / 2px 22px no-repeat,
+    linear-gradient(var(--accent), var(--accent)) right bottom / 22px 2px no-repeat,
+    linear-gradient(var(--accent), var(--accent)) right bottom / 2px 22px no-repeat;
+}
+.person-side h2 { font-size: var(--s-xl); margin-top: .5rem; }
 .person-main { display: grid; gap: 1.5rem; min-width: 0; align-content: start; }
 .person-main > p { max-width: 44rem; }
 .startups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-.startups div { display: grid; gap: .2rem; padding: 1rem 1.1rem; background: var(--bg-2); min-width: 0; }
+.startups div { display: grid; gap: .2rem; padding: 1rem 1.1rem; background: var(--card); border: 1px solid var(--line); min-width: 0; }
 .startups b { font-weight: 700; font-size: var(--s-sm); }
 .startups span { font-size: .86rem; color: var(--ink-soft); }
 .clients { font-size: var(--s-sm); color: var(--ink-soft); line-height: 1.8; }
 .clients b { color: var(--ink); font-weight: 600; }
 .quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
-blockquote { margin: 0; padding-top: 1.2rem; border-top: 3px solid var(--bullet); display: grid; gap: .8rem; align-content: start; }
+blockquote { margin: 0; padding-top: 1.2rem; border-top: 2px solid var(--accent); display: grid; gap: .8rem; align-content: start; }
 blockquote p { font-size: 1.08rem; line-height: 1.5; font-weight: 500; }
 blockquote footer { font-size: .84rem; color: var(--ink-soft); }
-@media (max-width: 56rem) { .person { grid-template-columns: minmax(0, 1fr); } .portrait { max-width: 18rem; } }
+@media (max-width: 58rem) { .person { grid-template-columns: minmax(0, 1fr); } .portrait { max-width: 18rem; } }
 @media (max-width: 40rem) { .startups, .quotes { grid-template-columns: minmax(0, 1fr); } }
 
 /* Kontakt */
-.contact { background: var(--deep); color: var(--deep-fg); }
 .contact .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2rem clamp(1.5rem, 1rem + 3vw, 4rem); align-items: end; }
+.contact .label { color: var(--plan-accent); }
 .contact h2 { font-size: var(--s-2xl); }
 .contact-text { display: grid; gap: 1.2rem; min-width: 0; }
-.contact-text p { color: var(--deep-soft); max-width: 34rem; }
+.contact-text p { color: var(--plan-soft); max-width: 34rem; }
 .channels { display: grid; gap: 1rem; min-width: 0; }
-.channel { display: grid; gap: .5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--deep-line); }
+.channel { display: grid; gap: .5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--plan-line); }
 .channel .row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 .channel a { font-weight: 600; font-size: clamp(1.2rem, 1.05rem + .6vw, 1.55rem); text-decoration: none; overflow-wrap: anywhere; }
-.channel a:hover { color: var(--lemon); }
-.copy { font: 500 var(--s-xs)/1 var(--f-label); letter-spacing: .08em; text-transform: uppercase; background: transparent; color: var(--deep-fg); border: 1px solid var(--deep-line); padding: .5rem .75rem; cursor: pointer; }
-.copy:hover { border-color: var(--lemon); color: var(--lemon); }
-.contact .fine { font-size: var(--s-xs); font-family: var(--f-label); letter-spacing: .04em; color: var(--deep-soft); }
-@media (max-width: 56rem) { .contact .wrap { grid-template-columns: minmax(0, 1fr); } }
+.channel a:hover { color: var(--plan-accent); }
+.copy { font: 500 var(--s-xs)/1 var(--f-label); letter-spacing: .08em; text-transform: uppercase; background: transparent; color: var(--plan-fg); border: 1px solid var(--plan-line); padding: .5rem .75rem; cursor: pointer; }
+.copy:hover { border-color: var(--plan-accent); color: var(--plan-accent); }
+.fine { font-size: var(--s-xs); font-family: var(--f-label); letter-spacing: .04em; color: var(--plan-soft); }
+@media (max-width: 58rem) { .contact .wrap { grid-template-columns: minmax(0, 1fr); } }
 
-.foot { padding-block: 1.6rem; font-size: .8rem; color: var(--ink-soft); }
-.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem 1.5rem; }
+.foot { padding-block: 1.8rem; font-size: .82rem; color: var(--ink-soft); }
+.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .6rem 2rem; }
+.foot strong { color: var(--ink); font-weight: 600; }
+.foot nav { display: flex; gap: 1.2rem; }
 </style>
 </head>
 <body>
 
 <header class="bar">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="COCO KI-Werkstatt, zum Seitenanfang"><img src="img/coco-logo.png" alt="COCO" width="110" height="44"><span>KI-Werkstatt</span></a>
+    <a class="brand" href="#top" aria-label="AI Architekt, zum Seitenanfang">
+      <svg viewBox="0 0 34 34" aria-hidden="true">
+        <path class="logo-line" d="M4 30 L17 4 L30 30 Z"/>
+        <path class="logo-line" d="M10.5 17 H23.5"/>
+        <circle class="logo-node" cx="17" cy="17" r="3.2"/>
+      </svg>
+      <b>AI <span>Architekt</span></b>
+    </a>
     <nav class="nav" aria-label="Seitennavigation">
       <a href="#ansatz">Ansatz</a>
       <a href="#werke">Referenzwerkzeuge</a>
@@ -307,39 +371,120 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
 
 <main id="top">
 
-  <div class="hero">
+  <div class="hero plan">
     <div class="wrap">
-      <div class="hero-text">
-        <span class="label">Workshop · Konzeption · Umsetzung · Übergabe</span>
-        <h1>KI-Werkzeuge <span class="mark">nach Maß</span>. <span class="thin">Konzipiert, gebaut und übergeben.</span></h1>
-        <p class="lead">Ich entwickle KI-Anwendungen für Unternehmen: von der Projektdefinition im Workshop bis zum fertigen, übergebenen Tool. <strong>Immer als abgeschlossenes Projekt mit festem Umfang.</strong> Quellcode, Daten und Konten gehören danach Ihnen.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#kontakt">Gespräch vereinbaren</a>
-          <a class="btn btn-ghost" href="#werke">Gebaute Werkzeuge ansehen</a>
+      <div class="hero-grid">
+        <div class="hero-text">
+          <span class="label">Workshop · Konzeption · Umsetzung · Übergabe</span>
+          <h1>KI-Werkzeuge, <em>geplant wie ein Bauwerk</em> und gebaut für Ihr Unternehmen.</h1>
+          <p class="lead">Ich entwickle KI-Anwendungen für Unternehmen: von der Projektdefinition im Workshop bis zum fertigen, übergebenen Tool. <strong>Immer als abgeschlossenes Projekt mit festem Umfang.</strong> Quellcode, Daten und Konten gehören danach Ihnen.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#kontakt">Gespräch vereinbaren</a>
+            <a class="btn btn-ghost" href="#werke">Gebaute Werkzeuge ansehen</a>
+          </div>
         </div>
+        <figure class="hero-figure" style="margin:0">
+<svg class="iso" viewBox="0 0 560 470" role="img" aria-labelledby="iso-t iso-d" xmlns="http://www.w3.org/2000/svg">
+<title id="iso-t">Architektur eines KI-Werkzeugs</title><desc id="iso-d">Vier Ebenen übereinander: Oberfläche und UX, Logik und Rechte, KI-Modelle, Daten und Schnittstellen.</desc>
+<line class="iso-cons" x1="60" y1="92" x2="60" y2="326"/>
+<line class="iso-cons" x1="210" y1="167.0" x2="210" y2="401.0"/>
+<line class="iso-cons" x1="360" y1="92" x2="360" y2="326"/>
+<g class="iso-layer">
+<polygon class="iso-side-l" points="60.0,326.0 210.0,401.0 210.0,413.0 60.0,338.0"/>
+<polygon class="iso-side-r" points="210.0,401.0 360.0,326.0 360.0,338.0 210.0,413.0"/>
+<polygon class="iso-top" points="210.0,251.0 360.0,326.0 210.0,401.0 60.0,326.0"/>
+<ellipse class="iso-mark" cx="156.0" cy="306.0" rx="16" ry="6"/>
+<path class="iso-mark-l" d="M140.0,306.0 v10 a16,6 0 0 0 32,0 v-10"/>
+<ellipse class="iso-mark" cx="210.0" cy="324.0" rx="16" ry="6"/>
+<path class="iso-mark-l" d="M194.0,324.0 v10 a16,6 0 0 0 32,0 v-10"/>
+<ellipse class="iso-mark" cx="264.0" cy="342.0" rx="16" ry="6"/>
+<path class="iso-mark-l" d="M248.0,342.0 v10 a16,6 0 0 0 32,0 v-10"/>
+</g>
+<line class="iso-lead" x1="364" y1="326" x2="378" y2="326"/>
+<text class="iso-label" x="382" y="323">Daten & Schnittstellen</text>
+<text class="iso-sub" x="382" y="340">Supabase · Stripe · Gmail</text>
+<g class="iso-layer is-ai">
+<polygon class="iso-side-l" points="60.0,248.0 210.0,323.0 210.0,335.0 60.0,260.0"/>
+<polygon class="iso-side-r" points="210.0,323.0 360.0,248.0 360.0,260.0 210.0,335.0"/>
+<polygon class="iso-top" points="210.0,173.0 360.0,248.0 210.0,323.0 60.0,248.0"/>
+<line class="iso-mark-l" x1="210.0" y1="248.0" x2="256.5" y2="271.2"/>
+<line class="iso-mark-l" x1="210.0" y1="248.0" x2="193.0" y2="279.8"/>
+<line class="iso-mark-l" x1="210.0" y1="248.0" x2="146.5" y2="256.5"/>
+<line class="iso-mark-l" x1="210.0" y1="248.0" x2="163.5" y2="224.8"/>
+<line class="iso-mark-l" x1="210.0" y1="248.0" x2="227.0" y2="216.2"/>
+<line class="iso-mark-l" x1="210.0" y1="248.0" x2="273.5" y2="239.5"/>
+<circle class="iso-node" cx="256.5" cy="271.2" r="4.5"/>
+<circle class="iso-node" cx="193.0" cy="279.8" r="4.5"/>
+<circle class="iso-node" cx="146.5" cy="256.5" r="4.5"/>
+<circle class="iso-node" cx="163.5" cy="224.8" r="4.5"/>
+<circle class="iso-node" cx="227.0" cy="216.2" r="4.5"/>
+<circle class="iso-node" cx="273.5" cy="239.5" r="4.5"/>
+<circle class="iso-core" cx="210.0" cy="248.0" r="9"/>
+</g>
+<line class="iso-lead" x1="364" y1="248" x2="378" y2="248"/>
+<text class="iso-label" x="382" y="245">KI-Modelle</text>
+<text class="iso-sub" x="382" y="262">Claude · Mistral · OpenAI</text>
+<g class="iso-layer">
+<polygon class="iso-side-l" points="60.0,170.0 210.0,245.0 210.0,257.0 60.0,182.0"/>
+<polygon class="iso-side-r" points="210.0,245.0 360.0,170.0 360.0,182.0 210.0,257.0"/>
+<polygon class="iso-top" points="210.0,95.0 360.0,170.0 210.0,245.0 60.0,170.0"/>
+<line class="iso-mark-l" x1="202.5" y1="128.8" x2="255.0" y2="147.5"/>
+<line class="iso-mark-l" x1="255.0" y1="147.5" x2="277.5" y2="181.2"/>
+<line class="iso-mark-l" x1="202.5" y1="128.8" x2="157.5" y2="166.2"/>
+<line class="iso-mark-l" x1="255.0" y1="147.5" x2="157.5" y2="166.2"/>
+<line class="iso-mark-l" x1="277.5" y1="181.2" x2="195.0" y2="200.0"/>
+<line class="iso-mark-l" x1="157.5" y1="166.2" x2="195.0" y2="200.0"/>
+<rect class="iso-node" x="198.5" y="124.8" width="8" height="8"/>
+<rect class="iso-node" x="251.0" y="143.5" width="8" height="8"/>
+<rect class="iso-node" x="273.5" y="177.2" width="8" height="8"/>
+<rect class="iso-node" x="153.5" y="162.2" width="8" height="8"/>
+<rect class="iso-node" x="191.0" y="196.0" width="8" height="8"/>
+</g>
+<line class="iso-lead" x1="364" y1="170" x2="378" y2="170"/>
+<text class="iso-label" x="382" y="167">Logik & Rechte</text>
+<text class="iso-sub" x="382" y="184">Prozesse, Fristen, Regeln</text>
+<g class="iso-layer">
+<polygon class="iso-side-l" points="60.0,92.0 210.0,167.0 210.0,179.0 60.0,104.0"/>
+<polygon class="iso-side-r" points="210.0,167.0 360.0,92.0 360.0,104.0 210.0,179.0"/>
+<polygon class="iso-top" points="210.0,17.0 360.0,92.0 210.0,167.0 60.0,92.0"/>
+<polygon class="iso-mark" points="210.0,32.0 266.2,60.1 146.2,120.1 90.0,92.0"/>
+<polygon class="iso-mark" points="277.5,65.8 330.0,92.0 277.5,118.2 225.0,92.0"/>
+<polygon class="iso-mark" points="213.8,97.6 266.2,123.9 210.0,152.0 157.5,125.8"/>
+</g>
+<line class="iso-lead" x1="364" y1="92" x2="378" y2="92"/>
+<text class="iso-label" x="382" y="89">Oberfläche & UX</text>
+<text class="iso-sub" x="382" y="106">Rollen, Ansichten, Klickpfade</text>
+<line class="iso-dim" x1="34" y1="17.0" x2="34" y2="413.0"/>
+<line class="iso-dim" x1="28" y1="23.0" x2="40" y2="11.0"/>
+<line class="iso-cons" x1="30" y1="17.0" x2="210" y2="17.0"/>
+<line class="iso-dim" x1="28" y1="419.0" x2="40" y2="407.0"/>
+<line class="iso-cons" x1="30" y1="413.0" x2="210" y2="413.0"/>
+<text class="iso-dimtext" transform="translate(24,215.0) rotate(-90)" text-anchor="middle">EIN ARCHITEKT · ALLE EBENEN</text>
+</svg>
+        </figure>
       </div>
       <div class="facts">
         <div class="fact"><b>30</b><span>Jahre digitale Projekte</span></div>
-        <div class="fact"><b>800+</b><span>umgesetzte Projekte</span></div>
-        <div class="fact"><b>300+</b><span>Unternehmen, vom Startup bis zum Konzern</span></div>
+        <div class="fact"><b>800<span>+</span></b><span>umgesetzte Projekte</span></div>
+        <div class="fact"><b>300<span>+</span></b><span>Unternehmen, vom Startup bis zum Konzern</span></div>
         <div class="fact"><b>4</b><span>eigene Startups gegründet, zwei davon verkauft</span></div>
       </div>
     </div>
   </div>
 
-  <section id="ansatz" class="tint">
+  <section id="ansatz">
     <div class="wrap">
       <div class="sec-head">
         <span class="label">Der Ansatz</span>
         <div>
-          <h2>Ein Sprachmodell ist an einem Nachmittag angebunden. Ein Werkzeug, mit dem ein Team jeden Tag arbeitet, braucht mehr.</h2>
+          <h2>Ein Sprachmodell ist an einem Nachmittag angebunden. Ein Werkzeug, mit dem ein Team jeden Tag arbeitet, braucht einen Architekten.</h2>
           <p class="muted">Die meisten KI-Vorhaben scheitern selten am Modell. Sie scheitern an unklaren Zielen, an Prozessen, die niemand aufgenommen hat, an Oberflächen, die im Alltag niemand öffnet, und an fehlenden Schnittstellen. Damit ein Tool im Unternehmen trägt, müssen drei Disziplinen zusammenpassen.</p>
         </div>
       </div>
       <div class="trio">
         <article>
-          <span class="no">Konzeption</span>
-          <h3>Das Richtige bauen</h3>
+          <svg viewBox="0 0 44 44" aria-hidden="true"><rect class="pict" x="4" y="6" width="36" height="32"/><path class="pict" d="M4 20 H22 V38 M22 6 V14"/><path class="pict-a" d="M22 14 A6 6 0 0 1 28 20"/><path class="pict" d="M28 20 H40"/></svg>
+          <h3>Konzeption: das Richtige bauen</h3>
           <p>Welcher Prozess wird besser, für wen, und woran merkt man das? Was gehört in Version 1, was bewusst noch nicht?</p>
           <ul class="dots">
             <li>Ziele, Nutzen und Grenzen</li>
@@ -348,8 +493,8 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
           </ul>
         </article>
         <article>
-          <span class="no">Technik</span>
-          <h3>Solide und bezahlbar im Betrieb</h3>
+          <svg viewBox="0 0 44 44" aria-hidden="true"><path class="pict" d="M22 4 L39 13 L39 31 L22 40 L5 31 L5 13 Z"/><path class="pict" d="M5 13 L22 22 L39 13 M22 22 V40"/><circle class="pict-dot" cx="22" cy="22" r="3"/></svg>
+          <h3>Technik: solide im Betrieb</h3>
           <p>Ein sauberes Datenmodell, abgesicherte Zugriffe und Schnittstellen zu den Systemen, die bereits da sind. Dazu KI-Kosten, die kalkulierbar bleiben.</p>
           <ul class="dots">
             <li>Datenbank, Authentifizierung, Rechte</li>
@@ -358,8 +503,8 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
           </ul>
         </article>
         <article>
-          <span class="no">UX</span>
-          <h3>Gern genutzt, ohne Schulung</h3>
+          <svg viewBox="0 0 44 44" aria-hidden="true"><rect class="pict" x="4" y="7" width="36" height="30" rx="1"/><path class="pict" d="M4 14 H40"/><rect class="pict-a" x="9" y="19" width="12" height="13"/><path class="pict" d="M25 20 H35 M25 25 H35 M25 30 H31"/></svg>
+          <h3>UX: gern genutzt, ohne Schulung</h3>
           <p>Wer öffnet das Tool, wann und auf welchem Gerät? Gute Oberflächen zeigen jeder Rolle genau das, was sie braucht, und sonst nichts.</p>
           <ul class="dots">
             <li>Informationsarchitektur und Klickpfade</li>
@@ -368,17 +513,17 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
           </ul>
         </article>
       </div>
-      <p class="one-hand">Alle drei Disziplinen liegen bei mir <span class="mark">in einer Hand</span>. Das spart Übergaben, Abstimmungsschleifen und die teuren Missverständnisse zwischen Fachbereich, Agentur und Entwicklung.</p>
+      <p class="one-hand">Alle drei Disziplinen liegen bei mir <strong>in einer Hand</strong>. Das spart Übergaben, Abstimmungsschleifen und die teuren Missverständnisse zwischen Fachbereich, Agentur und Entwicklung.</p>
     </div>
   </section>
 
-  <section id="werke">
+  <section id="werke" class="tint">
     <div class="wrap">
       <div class="sec-head">
         <span class="label">Referenzwerkzeuge</span>
         <div>
           <h2>Gebaut, im Einsatz und jeden Tag genutzt.</h2>
-          <p class="muted">Fünf Werkzeuge, die ich konzipiert, gestaltet und vollständig umgesetzt habe. Jedes löst eine andere Art von Aufgabe, und bei jedem hat eine Konzeptionsentscheidung den Unterschied gemacht.</p>
+          <p class="muted">Fünf Werkzeuge, die ich konzipiert, gestaltet und vollständig umgesetzt habe. Zu jedem zeigt eine Skizze, wie es aufgebaut ist, und bei jedem hat eine Konzeptionsentscheidung den Unterschied gemacht.</p>
         </div>
       </div>
 
@@ -386,12 +531,22 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
 
         <article class="work">
           <div class="work-id">
-            <span class="label plain">Öffentliche App · DE / EN</span>
+            <span class="kind">Öffentliche App · DE / EN</span>
             <h3>Solantara</h3>
             <p class="for">KI-Coach für den Umgang mit Angst</p>
           </div>
           <div class="work-body">
             <p>Ein persönlicher Coach, der sich an frühere Gespräche erinnert und mit bewährten psychologischen Methoden arbeitet. Für Menschen, die private, jederzeit verfügbare Unterstützung suchen.</p>
+            <div class="flow">
+              <span class="flow-title">Aufbau</span>
+              <ol>
+                <li><span class="node"><b>Nutzerin</b><small>App, zweisprachig</small></span></li>
+                <li><span class="node"><b>Tagebuch & Übungen</b><small>Verlauf, Muster</small></span></li>
+                <li><span class="node ai"><b>Coach mit Gedächtnis</b><small>Mistral AI, EU</small></span></li>
+                <li><span class="node"><b>Daten in der EU</b><small>verschlüsselt</small></span></li>
+                <li><span class="node"><b>Abo</b><small>Stripe</small></span></li>
+              </ol>
+            </div>
             <ul class="dots">
               <li>Coach mit Gedächtnis über die eigene Geschichte</li>
               <li>Angsttagebuch zur Mustererkennung</li>
@@ -407,12 +562,22 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
 
         <article class="work">
           <div class="work-id">
-            <span class="label plain">Kundenportal · 4 Rollen</span>
+            <span class="kind">Kundenportal · 4 Rollen</span>
             <h3>Projektcockpit</h3>
             <p class="for">Digitaler Projektraum für hochwertigen Innenausbau</p>
           </div>
           <div class="work-body">
             <p>Ein gemeinsamer Raum für Bauherr, Interior Designer, Handwerker und Bauleitung. Jede Rolle sieht ihren Ausschnitt desselben Projekts: der Bauherr eine ruhige Übersicht, der Handwerker seine Aufgaben, die Bauleitung alles.</p>
+            <div class="flow">
+              <span class="flow-title">Aufbau</span>
+              <ol>
+                <li><span class="node"><b>4 Rollen</b><small>Bauherr bis Bauleitung</small></span></li>
+                <li><span class="node"><b>Rechte je Datensatz</b><small>Row Level Security</small></span></li>
+                <li><span class="node"><b>Projektdaten</b><small>Aufgaben, Fotos, Plan</small></span></li>
+                <li><span class="node ai"><b>Berichtsentwurf</b><small>Claude</small></span></li>
+                <li><span class="node"><b>Benachrichtigung</b><small>E-Mail, Push</small></span></li>
+              </ol>
+            </div>
             <ul class="dots">
               <li>Aufgaben, Klärungspunkte und offene Entscheidungen</li>
               <li>Baustellenfotos mit Historie, Dokumente</li>
@@ -428,18 +593,28 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
 
         <article class="work">
           <div class="work-id">
-            <span class="label plain">Vertrieb · B2B</span>
+            <span class="kind">Vertrieb · B2B</span>
             <h3>CRM</h3>
             <p class="for">Kontaktpflege mit KI-Entwürfen direkt in Gmail</p>
           </div>
           <div class="work-body">
             <p>Ein schlankes Vertriebs-CRM, das sagt, wen man heute kontaktieren sollte, und die passende E-Mail gleich vorbereitet.</p>
+            <div class="flow">
+              <span class="flow-title">Aufbau</span>
+              <ol>
+                <li><span class="node"><b>Kontaktzyklen</b><small>feste Regeln</small></span></li>
+                <li><span class="node"><b>Tagesübersicht</b><small>8 Uhr per Mail</small></span></li>
+                <li><span class="node ai"><b>E-Mail-Entwurf</b><small>Claude, eigene Vorlagen</small></span></li>
+                <li><span class="node"><b>Gmail-Entwurf</b><small>Gmail API</small></span></li>
+                <li><span class="node"><b>Prüfen & senden</b><small>durch den Menschen</small></span></li>
+              </ol>
+            </div>
             <ul class="dots">
               <li>Unternehmen, Ansprechpartner und Verlauf als Timeline</li>
               <li>Claude entwirft E-Mails auf Basis eigener Vorlagen</li>
               <li>Entwurf landet direkt im Gmail-Postfach</li>
               <li>Briefing vor jedem Telefonat</li>
-              <li>Feste Kontaktzyklen: Follow-up nach 8 und 14 Tagen, Wiederaufnahme nach 90</li>
+              <li>Follow-up nach 8 und 14 Tagen, Wiederaufnahme nach 90</li>
               <li>Tägliche Übersicht um 8 Uhr per Mail</li>
             </ul>
             <div class="decision"><b>Entscheidung</b><p>Wann nachgefasst wird, bestimmen feste Regeln. Die KI formuliert, der Mensch liest, ändert und sendet.</p></div>
@@ -449,12 +624,22 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
 
         <article class="work">
           <div class="work-id">
-            <span class="label plain">Interne Organisation</span>
+            <span class="kind">Interne Organisation</span>
             <h3>Task Management</h3>
             <p class="for">Offene Punkte aus dem eigenen Postausgang</p>
           </div>
           <div class="work-body">
             <p>Das Tool liest die gesendeten E-Mails mehrerer Postfächer, erkennt darin gestellte Fragen und delegierte Aufgaben und verfolgt, ob eine Antwort kommt. Nichts, was rausgegangen ist, geht mehr verloren.</p>
+            <div class="flow">
+              <span class="flow-title">Aufbau</span>
+              <ol>
+                <li><span class="node"><b>2 Postfächer</b><small>IMAP, alle 15 Min.</small></span></li>
+                <li><span class="node"><b>Vorfilter</b><small>verwirft rund 60 %</small></span></li>
+                <li><span class="node ai"><b>Aufgaben erkennen</b><small>Claude Code, 3× täglich</small></span></li>
+                <li><span class="node"><b>Fristen</b><small>Werktage, Feiertage</small></span></li>
+                <li><span class="node"><b>Tages-Mail</b><small>werktags 8 Uhr</small></span></li>
+              </ol>
+            </div>
             <ul class="dots">
               <li>Abgleich zweier Postfächer alle 15 Minuten</li>
               <li>Zuordnung zu fünf Geschäftsbereichen</li>
@@ -470,12 +655,22 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
 
         <article class="work">
           <div class="work-id">
-            <span class="label plain">Lernen · Weiterbildung</span>
+            <span class="kind">Lernen · Weiterbildung</span>
             <h3>AI English Coach</h3>
             <p class="for">Fachenglisch für hochwertigen Innenausbau</p>
           </div>
           <div class="work-body">
             <p>Ein persönlicher Sprachtrainer für die Fachsprache einer Branche: Ausschreibung, Bauleitung, Qualitätskontrolle, Kundenkommunikation. Mit Vokabeln aus echten Quellen statt aus dem Lehrbuch.</p>
+            <div class="flow">
+              <span class="flow-title">Aufbau</span>
+              <ol>
+                <li><span class="node"><b>Fachquellen</b><small>Web, PDF</small></span></li>
+                <li><span class="node"><b>Wissensspeicher</b><small>Embeddings, pgvector</small></span></li>
+                <li><span class="node"><b>Lernkarten</b><small>Spaced Repetition</small></span></li>
+                <li><span class="node ai"><b>Dialogtraining</b><small>Claude bewertet</small></span></li>
+                <li><span class="node"><b>Audio & Tagesmail</b><small>Sprachsynthese</small></span></li>
+              </ol>
+            </div>
             <ul class="dots">
               <li>Wiederholung im optimalen Abstand (Spaced Repetition)</li>
               <li>Dialogtraining mit Bewertung durch Claude</li>
@@ -493,7 +688,7 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
     </div>
   </section>
 
-  <section id="technik" class="tint">
+  <section id="technik">
     <div class="wrap">
       <div class="sec-head">
         <span class="label">Werkzeugkasten</span>
@@ -504,7 +699,7 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
       </div>
       <div class="tools">
         <div>
-          <span class="label plain">Modelle</span>
+          <h3>Modelle</h3>
           <dl>
             <dt>Claude</dt><dd>Texte, Analyse, Berichte, Coaching, lange Kontexte</dd>
             <dt>ChatGPT / OpenAI</dt><dd>Embeddings, Sprachsynthese, breite Anwendungsfälle</dd>
@@ -512,7 +707,7 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
           </dl>
         </div>
         <div>
-          <span class="label plain">Entwicklung</span>
+          <h3>Entwicklung</h3>
           <dl>
             <dt>Claude Code</dt><dd>KI-gestützte Entwicklung in hohem Tempo</dd>
             <dt>GitHub</dt><dd>Versionierung, Review, nachvollziehbare Historie</dd>
@@ -520,7 +715,7 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
           </dl>
         </div>
         <div>
-          <span class="label plain">Betrieb</span>
+          <h3>Betrieb</h3>
           <dl>
             <dt>Vercel</dt><dd>Hosting, Deployments, zeitgesteuerte Läufe</dd>
             <dt>Supabase</dt><dd>Postgres, Login, Dateiablage, Rechte je Datensatz</dd>
@@ -528,7 +723,7 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
           </dl>
         </div>
         <div>
-          <span class="label plain">Schnittstellen</span>
+          <h3>Schnittstellen</h3>
           <dl>
             <dt>Stripe</dt><dd>Zahlungen, Abos, Gutscheine, Webhooks</dd>
             <dt>Gmail · Google APIs · IMAP</dt><dd>Postfächer lesen, Entwürfe anlegen, Mails senden</dd>
@@ -543,25 +738,29 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
     </div>
   </section>
 
-  <section id="angebot">
+  <section id="angebot" class="tint">
     <div class="wrap">
       <div class="sec-head">
         <span class="label">Angebot und Ablauf</span>
         <div>
-          <h2>Vom ersten Workshop bis zur Übergabe. In drei Schritten.</h2>
+          <h2>Vom Grundriss bis zur Schlüsselübergabe. In drei Schritten.</h2>
           <p class="muted">Der Workshop ist auch einzeln buchbar. Viele Kunden nutzen ihn, um intern eine belastbare Entscheidungsgrundlage zu schaffen, bevor sie über die Umsetzung entscheiden.</p>
         </div>
       </div>
 
-      <div class="chain" aria-hidden="true">
-        <div><span>1–2 Tage</span></div>
-        <div><span>nach Umfang</span></div>
-        <div><span>in Phasen, mit Abnahme</span></div>
-      </div>
-
       <div class="phases">
         <article class="phase">
-          <span class="num">1</span>
+          <div class="phase-fig">
+            <svg viewBox="0 0 120 84" aria-hidden="true">
+              <rect class="pict" x="6" y="6" width="96" height="66"/>
+              <path class="pict" d="M6 38 H46 V72 M46 6 V24 M70 38 H102 M70 38 V72"/>
+              <path class="pict-a" d="M46 24 A14 14 0 0 1 60 38"/>
+              <path class="pict" d="M60 38 H70"/>
+              <path class="pict" d="M6 80 H102 M6 77 V83 M102 77 V83" style="stroke-width:1"/>
+              <path class="pict" d="M110 6 V72 M107 6 H113 M107 72 H113" style="stroke-width:1"/>
+            </svg>
+            <span class="step"><b>1</b>Grundriss<br>1–2 Tage</span>
+          </div>
           <h3>Workshop zur Projektdefinition</h3>
           <p>Mit Geschäftsführung und den Fachbereichen, die das Tool später nutzen. Vor Ort oder remote.</p>
           <ul class="dots">
@@ -574,7 +773,19 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
           <p class="result"><b>Ergebnis:</b> eine schriftliche Projektdefinition und ein verbindliches Festpreisangebot für die Umsetzung.</p>
         </article>
         <article class="phase">
-          <span class="num">2</span>
+          <div class="phase-fig">
+            <svg viewBox="0 0 120 84" aria-hidden="true">
+              <rect class="pict" x="6" y="6" width="80" height="72"/>
+              <path class="pict" d="M6 18 H86"/>
+              <rect class="pict-a" x="12" y="24" width="24" height="48"/>
+              <rect class="pict" x="42" y="24" width="38" height="20"/>
+              <rect class="pict" x="42" y="50" width="38" height="22"/>
+              <rect class="pict" x="92" y="6" width="22" height="30"/>
+              <path class="pict" d="M92 42 H114 M92 50 H114 M92 58 H108"/>
+              <path class="pict" d="M36 34 H42" style="stroke-dasharray:2 2"/>
+            </svg>
+            <span class="step"><b>2</b>Bauplan<br>nach Umfang</span>
+          </div>
           <h3>Konzeption und UX</h3>
           <p>Aus der Projektdefinition wird ein Bauplan, den Sie vor dem ersten Code freigeben.</p>
           <ul class="dots">
@@ -587,7 +798,16 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
           <p class="result"><b>Ergebnis:</b> eine verbindliche Spezifikation, an der sich jede Phase messen lässt.</p>
         </article>
         <article class="phase">
-          <span class="num">3</span>
+          <div class="phase-fig">
+            <svg viewBox="0 0 120 84" aria-hidden="true">
+              <path class="pict" d="M60 6 L106 29 L106 57 L60 80 L14 57 L14 29 Z"/>
+              <path class="pict" d="M14 29 L60 52 L106 29 M60 52 V80"/>
+              <path class="pict" d="M14 43 L60 66 L106 43" style="stroke-dasharray:3 3"/>
+              <path class="pict-a" d="M37 17.5 L83 40.5 M60 6 L60 29"/>
+              <circle class="pict-dot" cx="60" cy="29" r="3.5"/>
+            </svg>
+            <span class="step"><b>3</b>Bau &amp; Übergabe<br>in Phasen</span>
+          </div>
           <h3>Umsetzung und Übergabe</h3>
           <p>Gebaut wird in klar abgegrenzten Phasen. Nach jeder Phase sehen und testen Sie einen lauffähigen Stand.</p>
           <ul class="dots">
@@ -603,7 +823,7 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
     </div>
   </section>
 
-  <section id="projekt" class="tint">
+  <section id="projekt">
     <div class="wrap">
       <div class="sec-head">
         <span class="label">Projekt statt Abo</span>
@@ -637,7 +857,7 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
     </div>
   </section>
 
-  <section id="person">
+  <section id="person" class="tint">
     <div class="wrap person">
       <div class="person-side">
         <span class="label">Über mich</span>
@@ -645,10 +865,10 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
           <img src="img/martin-bauer.jpg" alt="Porträt Martin Bauer" width="768" height="768" decoding="async">
         </figure>
         <h2>Martin Bauer</h2>
-        <p class="muted">Gründer von COCO, Berater für Konzeption und digitale Strategie, München</p>
+        <p class="muted">Gründer, Berater für Konzeption und digitale Strategie, München</p>
       </div>
       <div class="person-main">
-        <p>Ich habe COCO 1997 direkt aus dem BWL-Studium als Full-Service-Digitalagentur gegründet. Seitdem habe ich über 800 digitale Projekte verantwortet: Websites, Plattformen, Apps, Portale und Kampagnen, als Geschäftsführer von COCO new media und COCO Content Marketing und heute als Berater. Workshops mit Geschäftsführung, Marketing, Vertrieb und Fachbereichen sind seit Jahrzehnten der Kern meiner Arbeit. Dort entscheidet sich, ob ein Projekt gelingt.</p>
+        <p>1997 habe ich direkt aus dem BWL-Studium eine Full-Service-Digitalagentur gegründet und seitdem über 800 digitale Projekte verantwortet: Websites, Plattformen, Apps, Portale und Kampagnen, als Geschäftsführer zweier Agenturen und heute als Berater. Workshops mit Geschäftsführung, Marketing, Vertrieb und Fachbereichen sind seit Jahrzehnten der Kern meiner Arbeit. Dort entscheidet sich, ob ein Projekt gelingt.</p>
         <p>Weil ich selbst gegründet habe, kenne ich die Perspektive des Auftraggebers, der mit eigenem Geld und begrenzter Zeit ein Ergebnis braucht.</p>
         <div class="startups">
           <div><b>Film.de</b><span>Content-, Commerce- und Community-Plattform. Verkauft an die Cinemedia Film AG.</span></div>
@@ -671,7 +891,7 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
     </div>
   </section>
 
-  <section id="kontakt" class="contact">
+  <section id="kontakt" class="contact plan">
     <div class="wrap">
       <div class="contact-text">
         <span class="label">Erstes Gespräch</span>
@@ -683,8 +903,8 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
         <div class="channel">
           <span class="fine">E-Mail</span>
           <div class="row">
-            <a href="mailto:mb@coco-consulting.de?subject=Anfrage%20KI-Werkstatt" id="mail">mb@coco-consulting.de</a>
-            <button class="copy" type="button" data-copy="mb@coco-consulting.de" id="copy-mail">Kopieren</button>
+            <a href="mailto:kontakt@mb-services.group?subject=Anfrage%20AI%20Architekt" id="mail">kontakt@mb-services.group</a>
+            <button class="copy" type="button" data-copy="kontakt@mb-services.group" id="copy-mail">Kopieren</button>
           </div>
         </div>
         <div class="channel">
@@ -702,8 +922,11 @@ blockquote footer { font-size: .84rem; color: var(--ink-soft); }
 
 <footer class="foot">
   <div class="wrap">
-    <span>COCO Consulting · Martin Bauer · Jahnstr. 25 · 80469 München</span>
-    <a href="https://coco-consulting.de/impressum/">Impressum und Datenschutz</a>
+    <span><strong>AI Architekt ist eine Marke der MB Services GmbH.</strong> Jahnstr. 25 · 80469 München · HRB 131948 · Geschäftsführer: Martin Bauer</span>
+    <nav aria-label="Rechtliches">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
   </div>
 </footer>
 
