@@ -4,7 +4,7 @@ Website für **https://ai-architekt.com**.
 
 Onepager für die KI-Tool-Leistungen von Martin Bauer: Workshops zur Projektdefinition, Konzeption, UX und komplette Umsetzung, immer als abgeschlossenes Projekt. AI Architekt ist eine Marke der MB Services GmbH.
 
-Die Seite ist für Suchmaschinen freigegeben: kanonische Adresse `https://www.ai-architekt.com/`, `sitemap.xml`, strukturierte Daten (JSON-LD) und Open-Graph-Vorschaubild `img/og-image.png`.
+Die Seite ist für Suchmaschinen freigegeben: kanonische Adresse `https://www.ai-architekt.com/`, `sitemap.xml`, strukturierte Daten (JSON-LD) und Open-Graph-Vorschaubild `img/share-ai.png`.
 
 ## Aufbau
 
@@ -12,7 +12,7 @@ Die Seite ist für Suchmaschinen freigegeben: kanonische Adresse `https://www.ai
 |---|---|
 | `public/index.html` | Die komplette Seite: HTML, CSS und alle Grafiken als Inline-SVG (Abb. 1 Schichtenmodell, Aufbau-Skizzen der Projekte, Plan-Zeichnungen der Zusammenarbeit) |
 | `public/impressum.html`, `public/datenschutz.html` | Rechtstexte der MB Services GmbH |
-| `public/img/` | Porträt Martin Bauer, Favicon (die Buchstaben „AI“ der Wortmarke als SVG-Pfade), PNG-Icons, Vorschaubild für Social Media |
+| `public/img/` | Porträt Martin Bauer, Favicon (die Buchstaben „AI“ der Wortmarke als SVG-Pfade), PNG-Icons, Vorschaubild zum Teilen (`share-ai.png`, das „AI“ der Wortmarke) |
 | `public/fonts/` | Selbst gehostete Schrift Maven Pro. Keine Verbindung zu Google-Servern |
 | `public/robots.txt`, `public/sitemap.xml` | Crawler-Freigabe und Sitemap |
 | `api/contact.js` | Versand des Kontaktformulars per SMTP, mit Prüfung der Eingaben und Spam-Falle |
