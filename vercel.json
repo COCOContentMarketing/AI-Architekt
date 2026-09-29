@@ -1,6 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "outputDirectory": "public",
+  "buildCommand": "",
+  "framework": null,
+  "regions": [
+    "fra1"
+  ],
   "cleanUrls": true,
   "headers": [
     {

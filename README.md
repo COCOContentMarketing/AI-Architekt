@@ -15,9 +15,24 @@ Die Seite ist für Suchmaschinen freigegeben: kanonische Adresse `https://www.ai
 | `public/img/` | Porträt Martin Bauer, Favicon (die Buchstaben „AI“ der Wortmarke als SVG-Pfade), PNG-Icons, Vorschaubild für Social Media |
 | `public/fonts/` | Selbst gehostete Schrift Maven Pro. Keine Verbindung zu Google-Servern |
 | `public/robots.txt`, `public/sitemap.xml` | Crawler-Freigabe und Sitemap |
+| `api/contact.js` | Versand des Kontaktformulars per SMTP, mit Prüfung der Eingaben und Spam-Falle |
 | `vercel.json` | Ausgabeordner, Sicherheits- und Cache-Header, Weiterleitung `/favicon.ico` |
 
-Kein Build-Schritt, keine Abhängigkeiten.
+Die Seite selbst braucht keinen Build-Schritt. Das Kontaktformular schickt an `api/contact.js`, eine Vercel-Funktion, die Anfragen per SMTP weiterleitet (Abhängigkeit: `nodemailer`).
+
+## Kontaktformular einrichten
+
+In Vercel unter **Settings → Environment Variables** für Production eintragen:
+
+| Variable | Beispiel |
+|---|---|
+| `SMTP_HOST` | `smtp.ionos.de` |
+| `SMTP_PORT` | `465` (SSL) oder `587` (STARTTLS) |
+| `SMTP_USER`, `SMTP_PASS` | Zugangsdaten des Postfachs, über das verschickt wird |
+| `MAIL_TO` | `kontakt@ai-architekt.com` |
+| `MAIL_FROM` | optional, Absenderadresse (Standard: `SMTP_USER`) |
+
+Danach neu deployen. Lokal ohne Versand testen mit `MAIL_DRY_RUN=1`.
 
 ## Deployment auf Vercel
 
