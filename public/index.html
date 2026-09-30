@@ -322,6 +322,13 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
 .foot { background: var(--deep); color: var(--deep-soft); font-size: .82rem; }
 .foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .8rem 2rem; padding-block: 1.6rem 2rem; border-top: 1px solid var(--deep-line); }
 .foot strong { color: var(--deep-fg); font-weight: 500; }
+.foot .foot-related { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: .4rem clamp(2rem, 1rem + 4vw, 5rem); align-items: baseline; padding-block: 2.2rem 2rem; border-top: 0; font-size: var(--s-sm); }
+.foot-name { color: var(--deep-fg); font-weight: 500; }
+.foot-desc { max-width: 40rem; display: grid; justify-items: start; gap: .6rem; }
+.foot .foot-link { display: inline-flex; align-items: baseline; gap: .45rem; color: var(--deep-fg); border-bottom: 1px solid var(--deep-line); white-space: nowrap; }
+.foot .foot-link::after { content: "\2192"; }
+.foot .foot-link:hover { border-bottom-color: var(--deep-fg); }
+@media (max-width: 52rem) { .foot .foot-related { grid-template-columns: minmax(0, 1fr); } }
 .foot nav { display: flex; gap: 1.5rem; }
 .foot a { text-decoration: none; }
 .foot a:hover { color: var(--deep-fg); }
@@ -929,6 +936,10 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
 </main>
 
 <footer class="foot">
+  <div class="wrap foot-related">
+    <p class="foot-name">COCO Consulting</p>
+    <p class="foot-desc">Strategische B2B-Kommunikation, Positionierung und Website-Strategie mit Martin Bauer. <a class="foot-link" href="https://coco-consulting.de/">coco-consulting.de</a></p>
+  </div>
   <div class="wrap">
     <span><strong>AI Architekt ist eine Marke der MB Services GmbH.</strong> Jahnstr. 25, 80469 München</span>
     <nav aria-label="Rechtliches">
