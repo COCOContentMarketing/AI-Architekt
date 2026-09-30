@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.ai-architekt.com/sitemap.xml
+# KI-Assistenten ausdrücklich zugelassen
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+Sitemap: https://ai-architekt.com/sitemap.xml

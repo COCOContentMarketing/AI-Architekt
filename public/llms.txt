@@ -1,0 +1,57 @@
+# AI Architekt
+
+> AI Architekt ist das Beratungsangebot von Martin Bauer (München) für KI-Werkzeuge in Unternehmen: Beratung, Workshop zur Projektdefinition, Konzeption, Gestaltung und komplette Umsetzung. Immer als abgeschlossenes Projekt mit festem Umfang und Festpreis, keine Lizenzen und keine Abonnements. Quellcode, Daten und Konten gehören danach dem Kunden. AI Architekt ist eine Marke der MB Services GmbH.
+
+Website: https://ai-architekt.com/
+Kontakt: kontakt@ai-architekt.com · +49 177 1977275 (Telefon und WhatsApp)
+Anschrift: MB Services GmbH, Jahnstr. 25, 80469 München
+
+## Ansatz
+
+Viele Unternehmen spüren, dass KI ihnen helfen könnte, wissen aber nicht, wo genau. Entscheidend ist, den richtigen Prozess zu wählen, die künftigen Nutzer einzubeziehen und das Werkzeug sauber in die bestehende Systemlandschaft einzufügen. Konzeption, Technik und Gestaltung liegen in einer Hand.
+
+- Konzeption: klären, welcher Ablauf durch KI spürbar besser wird, für wen, und woran der Erfolg gemessen wird; festlegen, was in eine erste Version gehört.
+- Technik: durchdachtes Datenmodell, abgesicherte Zugriffe, Schnittstellen zu bestehenden Systemen, laufende Kosten von Anfang an kalkulierbar.
+- Gestaltung: jede Rolle sieht genau das, was sie braucht, auf dem Gerät, das sie im Alltag nutzt.
+
+Ein KI-Werkzeug besteht aus vier Ebenen: Oberfläche und UX, Logik und Rechte, KI-Modelle, Daten und Schnittstellen.
+
+## Zusammenarbeit in drei Schritten
+
+1. Workshop zur Projektdefinition (ein bis zwei Tage, vor Ort oder remote) mit Geschäftsführung und Fachbereichen: Ziele und Nutzen, Abläufe und Beteiligte, Daten, Systeme, Datenschutz und Modellwahl. Ergebnis: schriftliche Projektdefinition und verbindliches Festpreisangebot. Der Workshop ist auch einzeln buchbar.
+2. Konzeption und Gestaltung: Informationsarchitektur, wichtigste Ansichten, Rechte und Datenmodell, technische Architektur, Phasenplan mit Abnahmekriterien. Ergebnis: verbindliche Spezifikation.
+3. Umsetzung und Übergabe in abgegrenzten Phasen mit lauffähigem Stand nach jeder Phase; Einrichtung auf den Konten des Kunden, Dokumentation, Einweisung. Ergebnis: ein laufendes Werkzeug, vollständig in der Hand des Kunden.
+
+## Grundsätze
+
+- Festpreis nach dem Workshop
+- Code, Daten und Konten gehören dem Kunden, keine Abhängigkeit
+- Keine laufenden Lizenzgebühren; Betriebskosten zahlt der Kunde direkt an Hosting- und Modellanbieter
+- Dokumentierte Übergabe; Erweiterungen wieder als klar umrissenes Projekt
+
+## Projekte aus der Praxis
+
+- Projektcockpit: Digitaler Projektraum für hochwertigen Innenausbau. Vier Rollen (Bauherr, Interior Designer, Handwerker, Bauleitung) mit eigener Sicht; Aufgaben, Klärungspunkte, Fotos, Dokumente, Bauzeitenplan, KI-Berichtsentwürfe mit Claude. Rechte je Datensatz in der Datenbank abgesichert (Supabase Row Level Security).
+- CRM: Kontaktpflege im Vertrieb mit festen Kontaktzyklen (8, 14 und 90 Tage), E-Mail-Entwürfen durch Claude direkt als Gmail-Entwurf, Telefon-Briefings und Tagesübersicht. Die KI formuliert, der Mensch prüft und sendet.
+- Task Management: Erkennt offene Fragen und delegierte Aufgaben im eigenen Postausgang zweier Postfächer, rechnet Fristen in Werktagen mit bayerischen Feiertagen und fasst in Stufen nach. Ein regelbasierter Vorfilter sortiert rund 60 % der Mails aus, bevor ein Modell sie sieht.
+- Solantara: Öffentliche, zweisprachige App als KI-Coach für den Umgang mit Angst. Coach mit Gedächtnis, Angsttagebuch, Sofortübungen, Abo über Stripe. Läuft auf Mistral AI mit Datenhaltung in der EU.
+- AI English Coach: Fachenglisch für hochwertigen Innenausbau mit Lernkarten (Spaced Repetition), Dialogtraining mit Bewertung durch Claude, Audio per Sprachsynthese und Import von Fachtexten aus Web und PDF.
+
+## Technologie
+
+Anbieterunabhängige Empfehlung je nach Aufgabe, Datenschutz und Budget.
+
+- Modelle: Claude, ChatGPT / OpenAI, Mistral AI
+- Entwicklung: Claude Code, GitHub, Next.js
+- Betrieb: Vercel, Supabase, pgvector
+- Schnittstellen: Stripe, Gmail und Google APIs, IMAP, Resend, Web Push
+
+## Über Martin Bauer
+
+Berater und Gründer aus München mit 30 Jahren Erfahrung in digitalen Projekten, über 800 umgesetzten Projekten und mehr als 300 beratenen Unternehmen vom Startup bis zum Konzern. 1997 Gründung einer Full-Service-Digitalagentur direkt aus dem BWL-Studium, Geschäftsführer zweier Agenturen. Vier eigene Startups, zwei davon verkauft: Film.de (verkauft an die Cinemedia Film AG), Contenno, Digitale Nachlassplanung (verkauft an memoresa) und pleyces. Projekte unter anderem für Zeppelin Baumaschinen, Develey, Stiebel Eltron, PlanetHome, BAUR, carwow, estos, Fogra, ITD, Zero Insurance und HateAid.
+
+## Seiten
+
+- [Startseite](https://ai-architekt.com/): Angebot, Projekte, Zusammenarbeit, Kontaktformular
+- [Impressum](https://ai-architekt.com/impressum)
+- [Datenschutz](https://ai-architekt.com/datenschutz)
