@@ -22,24 +22,24 @@
 <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfessionalService", "@id": "https://ai-architekt.com/#service", "name": "AI Architekt", "url": "https://ai-architekt.com/", "description": "Martin Bauer berät Unternehmen, wo KI echten Nutzen bringt, und setzt passende KI-Werkzeuge um: vom Workshop bis zur Übergabe, als Festpreisprojekt in Ihrem Eigentum.", "image": "https://ai-architekt.com/img/share-ai.png", "logo": "https://ai-architekt.com/img/icon-512.png", "email": "kontakt@ai-architekt.com", "telephone": "+49 177 1977275", "address": {"@type": "PostalAddress", "streetAddress": "Jahnstr. 25", "postalCode": "80469", "addressLocality": "München", "addressCountry": "DE"}, "areaServed": "DE", "founder": {"@id": "https://ai-architekt.com/#martin-bauer"}, "parentOrganization": {"@type": "Organization", "name": "MB Services GmbH"}, "knowsAbout": ["Künstliche Intelligenz", "KI-Beratung", "Workshops zur Projektdefinition", "Konzeption", "UX", "Claude", "ChatGPT", "Mistral AI", "Supabase", "Vercel", "Stripe"]}, {"@type": "Person", "@id": "https://ai-architekt.com/#martin-bauer", "name": "Martin Bauer", "jobTitle": "Berater für KI-Werkzeuge", "image": "https://ai-architekt.com/img/martin-bauer-portrait.jpg", "worksFor": {"@id": "https://ai-architekt.com/#service"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfessionalService", "@id": "https://ai-architekt.com/#service", "name": "AI Architekt", "url": "https://ai-architekt.com/", "description": "Martin Bauer berät Unternehmen, wo KI echten Nutzen bringt, und setzt passende KI-Werkzeuge um: vom Workshop bis zur Übergabe, als Festpreisprojekt in Ihrem Eigentum.", "image": "https://ai-architekt.com/img/share-ai.png", "logo": "https://ai-architekt.com/img/icon-512.png", "email": "kontakt@ai-architekt.com", "telephone": "+49 177 1977275", "address": {"@type": "PostalAddress", "streetAddress": "Jahnstr. 25", "postalCode": "80469", "addressLocality": "München", "addressCountry": "DE"}, "areaServed": "DE", "founder": {"@id": "https://ai-architekt.com/#martin-bauer"}, "parentOrganization": {"@type": "Organization", "name": "MB Services GmbH"}, "knowsAbout": ["Künstliche Intelligenz", "KI-Beratung", "Workshops zur Projektdefinition", "Konzeption", "UX", "Claude", "ChatGPT", "Mistral AI", "Supabase", "Vercel", "Stripe"]}, {"@type": "Person", "@id": "https://ai-architekt.com/#martin-bauer", "name": "Martin Bauer", "jobTitle": "Berater für KI-Werkzeuge", "image": "https://ai-architekt.com/img/martin-bauer-portrait-v2.jpg", "worksFor": {"@id": "https://ai-architekt.com/#service"}}]}</script>
 <link rel="preload" href="fonts/maven-pro-normal-400-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts/fonts.css">
 <script>document.documentElement.classList.add("js")</script>
 <style>
-/* Layout: Architekturbüro. Dunkelbraun für Kopfzeile, Kontakt und Footer, derselbe Braunton aufgehellt als Seitengrund, ein gedecktes Orange als Akzent für Handlungen und KI-Bausteine. Eine Schriftfamilie. Zeichnungen als Abbildungen mit Legende, wie in einer Werkmappe. */
+/* Layout: Architekturbüro. Weißer Seitengrund, einzelne Abschnitte im hellen Braunton abgesetzt, Dunkelbraun für Kopfzeile, Kontakt und Footer, ein kräftiges Orange als Akzent für Handlungen und KI-Bausteine. Eine Schriftfamilie. Zeichnungen als Abbildungen mit Legende, wie in einer Werkmappe. */
 :root {
-  --bg: #f3eeec;
-  --bg-2: #e9e1dd;
+  --bg: #ffffff;
+  --bg-2: #f2ebe6;
   --ink: #2d201a;
   --ink-soft: #6d5d55;
-  --line: #d7cbc6;
+  --line: #ddd1ca;
 
-  --accent: #e39a55;
-  --accent-hover: #ebaa6c;
-  --accent-text: #9c4f14;
-  --accent-mid: #cf8340;
-  --accent-deep: #b66a2a;
+  --accent: #ff7f11;
+  --accent-hover: #ff9534;
+  --accent-text: #b34a00;
+  --accent-mid: #f26f00;
+  --accent-deep: #c25400;
   --on-accent: #2d201a;
 
   --deep: #2d201a;
@@ -68,7 +68,7 @@
     --ink: #f1e9e4;
     --ink-soft: #b3a59d;
     --line: #382a22;
-    --accent-text: #e8a366;
+    --accent-text: #ff9a3d;
     --deep-line: #4a392e;
     color-scheme: dark;
   }
@@ -79,7 +79,7 @@
   --ink: #f1e9e4;
   --ink-soft: #b3a59d;
   --line: #382a22;
-  --accent-text: #e8a366;
+  --accent-text: #ff9a3d;
   --deep-line: #4a392e;
   color-scheme: dark;
 }
@@ -203,6 +203,8 @@ ul.list li:last-child { border-bottom: 1px solid var(--line); }
 
 /* ---------- Sektionen ---------- */
 section { padding-block: clamp(4rem, 2.5rem + 5vw, 7.5rem); scroll-margin-top: 5rem; border-top: 1px solid var(--line); }
+section.band { background: var(--bg-2); border-top: 0; }
+section.band + section { border-top: 0; }
 .sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: 1.2rem clamp(2rem, 1rem + 4vw, 5rem); margin-bottom: clamp(2.5rem, 2rem + 2vw, 4rem); }
 .sec-head .label { padding-top: .7rem; color: var(--accent-text); }
 .sec-head > div { display: grid; gap: 1.2rem; max-width: 46rem; }
@@ -757,7 +759,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
     </div>
   </section>
 
-  <section id="technologie">
+  <section id="technologie" class="band">
     <div class="wrap">
       <div class="sec-head">
         <p class="label">Technologie</p>
@@ -867,7 +869,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
     </div>
   </section>
 
-  <section id="grundsaetze">
+  <section id="grundsaetze" class="band">
     <div class="wrap">
       <div class="sec-head">
         <p class="label">Grundsätze</p>
@@ -904,7 +906,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
       <div class="person-side">
         <p class="label">Über mich</p>
         <figure class="portrait">
-          <img src="img/martin-bauer-portrait.jpg" alt="Porträt Martin Bauer" width="728" height="910" decoding="async">
+          <img src="img/martin-bauer-portrait-v2.jpg" alt="Porträt Martin Bauer" width="728" height="910" decoding="async">
         </figure>
         <h2>Martin Bauer</h2>
         <p class="muted">Berater und Gründer, München</p>
