@@ -39,7 +39,7 @@
   --accent-hover: #ff9429;
   --accent-mid: #ef7000;
   --accent-deep: #d26200;
-  --on-accent: #111111;
+  --on-accent: #000000;
 
   --deep: #2d201a;
   --deep-fg: #ffffff;
@@ -257,7 +257,7 @@ section.band + section { border-top: 0; }
 .node b { font-weight: 500; }
 .node small { font-size: .74rem; color: var(--ink-soft); }
 .node.ai { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-.node.ai small { color: var(--on-accent); opacity: .8; }
+.node.ai small { color: var(--on-accent); }
 .decision { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: .5rem 2rem; padding-top: 1.2rem; border-top: 1px solid var(--ink); font-size: var(--s-sm); }
 .stack { font-size: .82rem; color: var(--ink-soft); letter-spacing: .02em; }
 @media (max-width: 52rem) {
@@ -339,7 +339,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
 .channel .row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 .channel a { font-size: clamp(1.15rem, 1.05rem + .5vw, 1.45rem); text-decoration: none; overflow-wrap: anywhere; letter-spacing: -.01em; }
 .channel a:hover { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: .2em; }
-.copy { font: 500 var(--s-xs)/1 var(--font); letter-spacing: .12em; text-transform: uppercase; background: transparent; color: var(--deep-soft); border: 1px solid var(--deep-line); padding: .55rem .8rem; cursor: pointer; }
+.copy { font: 500 var(--s-xs)/1 var(--font); letter-spacing: .12em; text-transform: uppercase; background: transparent; color: var(--deep-fg); border: 1px solid var(--deep-line); padding: .55rem .8rem; cursor: pointer; }
 .copy:hover { color: var(--deep-fg); border-color: var(--accent); }
 @media (max-width: 52rem) { .contact .wrap { grid-template-columns: minmax(0, 1fr); } }
 
