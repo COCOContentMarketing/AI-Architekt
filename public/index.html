@@ -114,7 +114,7 @@ ul.list li:last-child { border-bottom: 1px solid var(--line); }
 .more { display: inline-flex; align-items: center; gap: .6rem; font-weight: 500; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: .15rem; }
 .more::after { content: "\2192"; transition: transform .2s; }
 .more:hover::after { transform: translateX(3px); }
-.btn { display: inline-flex; align-items: center; gap: .7rem; font: 700 1.05rem/1 var(--font); padding: 1.1rem 1.6rem; text-decoration: none; background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); -webkit-font-smoothing: antialiased; transition: background-color .2s, color .2s, border-color .2s; }
+.btn { display: inline-flex; align-items: center; gap: .7rem; font: 500 1rem/1 var(--font); padding: 1.1rem 1.6rem; text-decoration: none; background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); -webkit-font-smoothing: antialiased; transition: background-color .2s, color .2s, border-color .2s; }
 .btn::after { content: "\2192"; }
 .btn:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
 
@@ -126,7 +126,7 @@ ul.list li:last-child { border-bottom: 1px solid var(--line); }
 .nav { display: flex; gap: clamp(1.3rem, .6rem + 1.8vw, 2.6rem); align-items: center; font-size: clamp(1.05rem, .95rem + .3vw, 1.2rem); }
 .nav a { text-decoration: none; color: var(--deep-nav); padding-block: .3rem; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s, background-color .2s; }
 .nav a:hover { color: var(--deep-fg); border-bottom-color: var(--accent); }
-.nav a.cta-nav { background: var(--accent); color: var(--on-accent); font-weight: 700; padding: .65rem 1.2rem; border: 0; }
+.nav a.cta-nav { background: var(--accent); color: var(--on-accent); font-weight: 500; padding: .65rem 1.2rem; border: 0; }
 .nav a.cta-nav:hover { background: var(--accent-hover); color: var(--on-accent); }
 .nav-toggle { display: none; align-items: center; justify-content: center; width: 3rem; height: 3rem; margin-right: -.7rem; padding: 0; background: transparent; border: 0; color: var(--deep-fg); cursor: pointer; }
 .nav-toggle .bars, .nav-toggle .bars::before, .nav-toggle .bars::after { display: block; width: 1.7rem; height: 2px; background: currentColor; transition: transform .25s, top .25s, background-color .2s; }
@@ -318,10 +318,6 @@ section.band + section { border-top: 0; }
 .startups span { font-size: var(--s-sm); color: var(--ink-soft); }
 .clients { font-size: var(--s-sm); color: var(--ink-soft); line-height: 1.8; }
 .clients b { color: var(--ink); font-weight: 500; }
-.quotes { display: grid; grid-template-columns: minmax(0, 1fr); margin-top: 1rem; }
-blockquote { margin: 0; display: grid; gap: 1rem; align-content: start; padding-top: 1.2rem; border-top: 2px solid var(--accent); }
-blockquote p { font-size: var(--s-lg); line-height: 1.45; letter-spacing: -.01em; }
-blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
 @media (max-width: 52rem) { .person { grid-template-columns: minmax(0, 1fr); } .portrait { max-width: 20rem; } }
 @media (max-width: 40rem) { .startups { grid-template-columns: minmax(0, 1fr); } }
 
@@ -339,7 +335,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
 .channel .row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 .channel a { font-size: clamp(1.15rem, 1.05rem + .5vw, 1.45rem); text-decoration: none; overflow-wrap: anywhere; letter-spacing: -.01em; }
 .channel a:hover { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: .2em; }
-.copy { font: 700 .8rem/1 var(--font); letter-spacing: .1em; text-transform: uppercase; background: transparent; color: var(--deep-fg); border: 1px solid var(--deep-line); padding: .55rem .8rem; cursor: pointer; }
+.copy { font: 500 .8rem/1 var(--font); letter-spacing: .1em; text-transform: uppercase; background: transparent; color: var(--deep-fg); border: 1px solid var(--deep-line); padding: .55rem .8rem; cursor: pointer; }
 .copy:hover { color: var(--deep-fg); border-color: var(--accent); }
 @media (max-width: 52rem) { .contact .wrap { grid-template-columns: minmax(0, 1fr); } }
 
@@ -365,7 +361,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
 .check .err { grid-column: 2; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .form-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: .3rem; }
-.send { display: inline-flex; align-items: center; gap: .7rem; font: 700 1.05rem/1 var(--font); padding: 1.1rem 1.6rem; background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); cursor: pointer; transition: background-color .2s, border-color .2s; }
+.send { display: inline-flex; align-items: center; gap: .7rem; font: 500 1rem/1 var(--font); padding: 1.1rem 1.6rem; background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); cursor: pointer; transition: background-color .2s, border-color .2s; }
 .send::after { content: "\2192"; }
 .send:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
 .send:disabled { opacity: .5; cursor: wait; }
@@ -917,12 +913,6 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
           <div><b>pleyces</b><span>Soziales Netzwerk für Reisende.</span></div>
         </div>
         <p class="clients">Projekte unter anderem für <b>Zeppelin Baumaschinen</b>, <b>Develey</b>, <b>Stiebel Eltron</b>, <b>PlanetHome</b>, <b>BAUR</b>, <b>carwow</b>, <b>estos</b>, <b>Fogra</b>, <b>ITD</b>, <b>Zero Insurance</b> und <b>HateAid</b>, in Industrie, Software, Finanzen, Immobilien, Pharma, E-Commerce, Dienstleistungen und Non-Profit.</p>
-        <div class="quotes">
-          <blockquote>
-            <p>„Es gibt für mich 3 Faktoren, die eine herausragende Beratung ausmachen: Vertrauen, Kompetenz und gute Kommunikation. Martin und sein Team haben von Anfang an bei allen Bereichen überzeugt. Wir haben es keine Sekunde bereut, uns für sie entschieden zu haben. Was ich besonders geschätzt habe: Zusammenarbeit auf Augenhöhe, hohes Maß an Zuverlässigkeit, Flexibilität und der stetige Überblick auf das große Ganze. Und den Spaß haben wir auch nie verloren an der Sache.“</p>
-            <footer>Lina Lotta Landgraf, Digital Marketing Specialist, Dassault Systèmes</footer>
-          </blockquote>
-        </div>
       </div>
     </div>
   </section>
