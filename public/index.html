@@ -318,12 +318,12 @@ section.band + section { border-top: 0; }
 .startups span { font-size: var(--s-sm); color: var(--ink-soft); }
 .clients { font-size: var(--s-sm); color: var(--ink-soft); line-height: 1.8; }
 .clients b { color: var(--ink); font-weight: 500; }
-.quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 2.5rem; margin-top: 1rem; }
+.quotes { display: grid; grid-template-columns: minmax(0, 1fr); margin-top: 1rem; }
 blockquote { margin: 0; display: grid; gap: 1rem; align-content: start; padding-top: 1.2rem; border-top: 2px solid var(--accent); }
 blockquote p { font-size: var(--s-lg); line-height: 1.45; letter-spacing: -.01em; }
 blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
 @media (max-width: 52rem) { .person { grid-template-columns: minmax(0, 1fr); } .portrait { max-width: 20rem; } }
-@media (max-width: 40rem) { .startups, .quotes { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 40rem) { .startups { grid-template-columns: minmax(0, 1fr); } }
 
 /* Kontakt */
 .contact { background: var(--deep); color: var(--deep-fg); border-top: 0; }
@@ -425,7 +425,6 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
   <div class="plate">
     <div class="wrap plate-inner">
       <div class="caption">
-        <span class="label">Abb. 1</span>
         <p><b>Aufbau eines KI-Werkzeugs.</b> Jede Lösung besteht aus vier Ebenen: der Oberfläche, mit der Menschen arbeiten, den Regeln und Rechten, den KI-Modellen und den Daten und Schnittstellen darunter.</p>
         <p>Tragfähig wird ein Werkzeug erst, wenn alle vier Ebenen aufeinander abgestimmt sind. Das ist die Aufgabe eines Architekten.</p>
       </div>
@@ -920,11 +919,7 @@ blockquote footer { font-size: var(--s-sm); color: var(--ink-soft); }
         <p class="clients">Projekte unter anderem für <b>Zeppelin Baumaschinen</b>, <b>Develey</b>, <b>Stiebel Eltron</b>, <b>PlanetHome</b>, <b>BAUR</b>, <b>carwow</b>, <b>estos</b>, <b>Fogra</b>, <b>ITD</b>, <b>Zero Insurance</b> und <b>HateAid</b>, in Industrie, Software, Finanzen, Immobilien, Pharma, E-Commerce, Dienstleistungen und Non-Profit.</p>
         <div class="quotes">
           <blockquote>
-            <p>„Der Workshop mit Martin Bauer war top vorbereitet und über zwei Tage so voll mit spannendem Wissen, dass wir beide Male gerne überzogen haben.“</p>
-            <footer>Merlin Faude, Gründer und Geschäftsführer, Wut Coaches</footer>
-          </blockquote>
-          <blockquote>
-            <p>„Was ich besonders geschätzt habe: Zusammenarbeit auf Augenhöhe, hohes Maß an Zuverlässigkeit, Flexibilität und der stetige Überblick auf das große Ganze.“</p>
+            <p>„Es gibt für mich 3 Faktoren, die eine herausragende Beratung ausmachen: Vertrauen, Kompetenz und gute Kommunikation. Martin und sein Team haben von Anfang an bei allen Bereichen überzeugt. Wir haben es keine Sekunde bereut, uns für sie entschieden zu haben. Was ich besonders geschätzt habe: Zusammenarbeit auf Augenhöhe, hohes Maß an Zuverlässigkeit, Flexibilität und der stetige Überblick auf das große Ganze. Und den Spaß haben wir auch nie verloren an der Sache.“</p>
             <footer>Lina Lotta Landgraf, Digital Marketing Specialist, Dassault Systèmes</footer>
           </blockquote>
         </div>
